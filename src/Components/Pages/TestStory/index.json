@@ -1,0 +1,48 @@
+{
+  "stats": [
+    {
+      "name": "health",
+      "value": 8
+    },
+    {
+      "name": "days",
+      "value": 0
+    },
+    {
+      "name": "helpers",
+      "value": [
+        {
+          "name": "Thomas",
+          "language": "Ruby",
+          "tooltip": "There is a Gem for that!"
+        }
+      ]
+    }
+  ],
+
+  "text": [
+    "There is a place \n on the screen for text \n to be.",
+    "But, in another place \n it may also be."
+  ],
+
+  "art": "./dragonfly.jpg",
+
+  "options": [
+    {
+      "text": "if (you think dragonfly's are awesome) {\n +1 days}",
+      "effect": {
+        "target": "days",
+        "value": 1
+      },
+      "next": "./page1/a.js"
+    },
+    {
+      "text": "else if (you don't like dragonflys) {\n -4 health}",
+      "effect": {
+        "target": "health",
+        "value": -4
+      },
+      "next": "./page1/b.js"
+    }
+  ]
+}
