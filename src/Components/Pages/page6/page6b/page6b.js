@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import "./page6b.css";
 
 
-class page6a extends Component {
+class page6b extends Component {
   constructor() {
     super();
 

@@ -15,7 +15,7 @@ import page3d from './Components/Pages/page3/page3d/page3d.js';
 import page4a from './Components/Pages/page4/page4a/page4a.js';
 import page4b from './Components/Pages/page4/page4b/page4b.js';
 import page4c from './Components/Pages/page4/page4c/page4c.js';
-import page5 from './Components/Pages/page5/page5/page5.js';
+import page5 from './Components/Pages/page5/page5.js';
 import page6a from './Components/Pages/page6/page6a/page6a.js';
 import page6b from './Components/Pages/page6/page6b/page6b.js';
 import page6c from './Components/Pages/page6/page6c/page6c.js';
