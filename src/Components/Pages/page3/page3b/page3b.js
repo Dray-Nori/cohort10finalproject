@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 // import children
-import ButtonThree from './ButtonThree.js';
-import ButtonTwo from './ButtonTwo.js';
 import ButtonOne from './ButtonOne.js';
-import "./page1a.css";
+import ButtonTwo from './ButtonTwo.js';
+import "./page3b.css";
 
 
-class page1a extends Component {
+class page3b extends Component {
   constructor() {
     super();
 
@@ -15,15 +14,14 @@ class page1a extends Component {
     render() {
         return (
             <div className="bodydiv">
-              This is page One
+              This is page 3 - B
               <div className="buttondiv">
                 <ButtonOne />
                 <ButtonTwo />
-                <ButtonThree />
               </div>
           </div>
         )
     }
 }
 
-export default page1a;
+export default page3b;
