@@ -4,6 +4,7 @@ import Contributors from './Contributors.js';
 import NavBar from './NavBar.js';
 import Login from './Login.js';
 import Tracker from './Tracker.js';
+import Identification from './Identification.js';
 
 class Header extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Header extends Component {
       <NavBar />
       <Login />
       <Tracker />
+      <Identification />
       </div>
     );
   }
