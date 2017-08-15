@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header.js';
+import Footer from '../Footer.js';
 
 class Splash extends Component {
   constructor(props) {
@@ -14,12 +16,12 @@ class Splash extends Component {
     console.log(this.state.status);
     return (
       <div className="App">
+        <Header />
         This is the Home Page
+        <Footer />
       </div>
     )
   }
 }
 
 export default Splash;
-    // <Carousel />
-    // import Carousel from './Carousel';
