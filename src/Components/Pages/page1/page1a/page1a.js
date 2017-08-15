@@ -17,9 +17,9 @@ class page1a extends Component {
             <div className="bodydiv">
               This is page One
               <div className="buttondiv">
-                <buttonOne />
-                <buttonTwo />
-                <buttonThree />
+                <ButtonOne />
+                <ButtonTwo />
+                <ButtonThree />
               </div>
           </div>
         )
