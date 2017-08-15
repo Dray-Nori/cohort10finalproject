@@ -11,6 +11,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/Admin" component={Admin} />
         <Route path="/" component={Homepage} />
+        <Route path="/page1a" component={page1a} />
       </Switch>
   </BrowserRouter>,
   document.getElementById('root')
