@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import children
 import ButtonTwo from './ButtonTwo.js';
 import ButtonOne from './ButtonOne.js';
-import "./page2c.css";
+import "./page2a.css";
 
 
 class page2a extends Component {
