@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import Header from '../Header/Header'
 
@@ -12,6 +11,7 @@ class Page extends Component {
     super(props);
 
     // register listeners
+    this.onButtonPress = this.onButtonPress.bind(this);
 
     this.state = {
       stats: [],
@@ -22,12 +22,12 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    let json = require(`/${this.props.match.params.name}/index.json`)
-    console.log(json);
+    let json = require(`/${this.props.match.params.name}/index.json`);
+    let img = require(`/${this.props.match.params.name}/${json.art}`);
     this.setState({
       stats: json.stats,
       text: json.text,
-      art: json.art,
+      art: img,
       options: json.options
     })
   };
@@ -35,18 +35,40 @@ class Page extends Component {
 
   onButtonPress = (e) => {
     // TODO stuff
+    e.preventDefault()
+    console.log('prior state', this.state);
+    // console.log('event target', e.target);
+    // console.log('event value', e.target.value);
+
+    let nextPage = require(`/${this.props.match.params.name}/${e.target.value}`);
+    let nextImg = require(`/${this.props.match.params.name}/${nextPage.art}`)
+    console.log('next page', nextPage);
+
+    this.setState({
+      text: nextPage.text,
+      art: nextImg,
+      options: nextPage.options
+    })
+    console.log('new state', this.state);
   };
 
   render() {
-    // let stories = json.stories.map((story) => {
-    //   <button key={story.title} value={story.index}>{story.title}</button>
-    // })
-    console.log('state', this.state);
+    // console.log('state', this.state);
+    let options = this.state.options.map((opt) => {
+      return (
+        <button key={opt.next} value={opt.next} onClick={this.onButtonPress}>{opt.text}</button>
+      )
+    })
+    // let imgSrc = `Pages/${this.props.match.params.name}/${this.state.art}`;
+    // console.log('image source', imgSrc);
     return (
       <div className="storyPage">
         <Header stats={this.state.stats} />
         <br />
+        <img src={this.state.art} alt="this bullshit" />
         {this.state.text}
+        <h6> Options </h6>
+        {options}
       </div>
     )
   }

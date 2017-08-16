@@ -13,7 +13,7 @@ class StoryPicker extends Component {
     let stories = json.stories.map((story) => {
       let link = `/story/${story.title}`
       return (
-        <Link to={link}>{story.title}</Link>
+        <Link key={story.title} to={link}>{story.title}</Link>
       )
     })
 

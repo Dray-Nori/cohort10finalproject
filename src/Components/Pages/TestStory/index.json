@@ -25,24 +25,24 @@
     "But, in another place \n it may also be."
   ],
 
-  "art": "./dragonfly.jpg",
+  "art": "assets/dragonfly.jpg",
 
   "options": [
     {
-      "text": "if (you think dragonfly's are awesome) {\n +1 days}",
+      "text": "if (you think dragonfly's are awesome) {\n\t +1 days\n}",
       "effect": {
         "target": "days",
         "value": 1
       },
-      "next": "./page1/a.js"
+      "next": "page1/a.json"
     },
     {
-      "text": "else if (you don't like dragonflys) {\n -4 health}",
+      "text": "else if (you don't like dragonflys) {\n\t -4 health\n}",
       "effect": {
         "target": "health",
         "value": -4
       },
-      "next": "./page1/b.js"
+      "next": "page1/b.json"
     }
   ]
 }
