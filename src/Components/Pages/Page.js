@@ -34,22 +34,33 @@ class Page extends Component {
 
 
   onButtonPress = (e) => {
-    // TODO stuff
     e.preventDefault()
-    console.log('prior state', this.state);
-    // console.log('event target', e.target);
-    // console.log('event value', e.target.value);
+    // console.log('prior stats', this.state.stats);
+    let effect = this.state.options.find((opt) => {
+      if (opt.next === e.target.value) {
+        return true
+      }
+      return false
+    })
+    let newStatBlock = this.state.stats;
+    let newStat = newStatBlock.find((opt) => {
+      if (opt.name === effect.effect.target) {
+        return true
+      }
+      return false
+    });
+    let index = newStatBlock.indexOf(newStat);
+    newStatBlock[index].value += effect.effect.value;
 
     let nextPage = require(`/${this.props.match.params.name}/${e.target.value}`);
     let nextImg = require(`/${this.props.match.params.name}/${nextPage.art}`)
-    console.log('next page', nextPage);
 
     this.setState({
+      stats: newStatBlock,
       text: nextPage.text,
       art: nextImg,
       options: nextPage.options
     })
-    console.log('new state', this.state);
   };
 
   render() {

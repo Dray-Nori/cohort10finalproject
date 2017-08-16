@@ -1,8 +1,7 @@
 {
   "stories": [
     {
-      "title": "TestStory",
-      "index": "./TestStory/index.json"
+      "title": "TestStory"
     }
   ]
 }
