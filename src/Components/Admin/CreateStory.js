@@ -246,7 +246,7 @@ class CreateStory extends Component {
     this.setState({ Page6EndingCInput: event.target.value });
   }
 
-  addToProductList = event => {
+  addToStory = event => {
     event.preventDefault();
     this.setState({
       Page1Title: event.target.value,
@@ -295,161 +295,530 @@ class CreateStory extends Component {
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        userId: this.state.userId,
-        picture: this.state.picture,
-        name: this.state.name,
-        description: this.state.description,
-        price: this.state.price
+        Page1Title: this.state.Page1Title,
+        Page1ChoiceAInput: this.state.Page1ChoiceAInput,
+        Page1ChoiceBInput: this.state.Page1ChoiceBInput,
+        Page1ChoiceCInput: this.state.Page1ChoiceCInput,
+        Page2ResultAInput: this.state.Page2ResultAInput,
+        Page2ResultBInput: this.state.Page2ResultBInput,
+        Page2ResultCInput: this.state.Page2ResultCInput,
+        Page2ResultAChoiceAInput: this.state.Page2ResultAChoiceAInput,
+        Page2ResultAChoiceBInput: this.state.Page2ResultAChoiceBInput,
+        Page2ResultBChoiceAInput: this.state.Page2ResultBChoiceAInput,
+        Page2ResultBChoiceBInput: this.state.Page2ResultBChoiceBInput,
+        Page2ResultCChoiceAInput: this.state.Page2ResultCChoiceAInput,
+        Page2ResultCChoiceBInput: this.state.Page2ResultCChoiceBInput,
+        Page3ResultAInput: this.state.Page3ResultAInput,
+        Page3ResultBInput: this.state.Page3ResultBInput,
+        Page3ResultCInput: this.state.Page3ResultCInput,
+        Page3ResultDInput: this.state.Page3ResultDInput,
+        Page3ResultAChoiceAInput: this.state.Page3ResultAChoiceAInput,
+        Page3ResultAChoiceBInput: this.state.Page3ResultAChoiceBInput,
+        Page3ResultBChoiceAInput: this.state.Page3ResultBChoiceAInput,
+        Page3ResultBChoiceBInput: this.state.Page3ResultBChoiceBInput,
+        Page3ResultCChoiceAInput: this.state.Page3ResultCChoiceAInput,
+        Page3ResultCChoiceBInput: this.state.Page3ResultCChoiceBInput,
+        Page3ResultDChoiceAInput: this.state.Page3ResultDChoiceAInput,
+        Page3ResultDChoiceBInput: this.state.Page3ResultDChoiceBInput,
+        Page4ResultAInput: this.state.Page4ResultAInput,
+        Page4ResultBInput: this.state.Page4ResultBInput,
+        Page4ResultCInput: this.state.Page4ResultCInput,
+        Page4ResultAChoiceAInput: this.state.Page4ResultAChoiceAInput,
+        Page4ResultAChoiceBInput: this.state.Page4ResultAChoiceBInput,
+        Page4ResultBChoiceAInput: this.state.Page4ResultBChoiceAInput,
+        Page4ResultBChoiceBInput: this.state.Page4ResultBChoiceBInput,
+        Page4ResultCChoiceAInput: this.state.Page4ResultCChoiceAInput,
+        Page4ResultCChoiceBInput: this.state.Page4ResultCChoiceBInput,
+        Page5ResultInput: this.state.Page5ResultInput,
+        Page5ResultChoiceAInput: this.state.Page5ResultChoiceAInput,
+        Page5ResultChoiceBInput: this.state.Page5ResultChoiceBInput,
+        Page5ResultChoiceCInput: this.state.Page5ResultChoiceCInput,
+        Page6EndingAInput: this.state.Page6EndingAInput,
+        Page6EndingBInput: this.state.Page6EndingBInput,
+        Page6EndingCInput: this.state.Page6EndingCInput
       })
       .then(response => {
-        console.log(response, 'Item added!');
+        console.log(response, 'Story added!');
       })
       .catch(err => {
-        console.log(err, 'Item not added, try again');
+        console.log(err, 'Story not added, try again');
       });
     this.setState({
-      userId: '',
-      picture: '',
-      name: '',
-      description: '',
-      price: ''
+      Page1Title: '',
+      Page1ChoiceAInput: '',
+      Page1ChoiceBInput: '',
+      Page1ChoiceCInput: '',
+      Page2ResultAInput: '',
+      Page2ResultBInput: '',
+      Page2ResultCInput: '',
+      Page2ResultAChoiceAInput: '',
+      Page2ResultAChoiceBInput: '',
+      Page2ResultBChoiceAInput: '',
+      Page2ResultBChoiceBInput: '',
+      Page2ResultCChoiceAInput: '',
+      Page2ResultCChoiceBInput: '',
+      Page3ResultAInput: '',
+      Page3ResultBInput: '',
+      Page3ResultCInput: '',
+      Page3ResultDInput: '',
+      Page3ResultAChoiceAInput: '',
+      Page3ResultAChoiceBInput: '',
+      Page3ResultBChoiceAInput: '',
+      Page3ResultBChoiceBInput: '',
+      Page3ResultCChoiceAInput: '',
+      Page3ResultCChoiceBInput: '',
+      Page3ResultDChoiceAInput: '',
+      Page3ResultDChoiceBInput: '',
+      Page4ResultAInput: '',
+      Page4ResultBInput: '',
+      Page4ResultCInput: '',
+      Page4ResultAChoiceAInput: '',
+      Page4ResultAChoiceBInput: '',
+      Page4ResultBChoiceAInput: '',
+      Page4ResultBChoiceBInput: '',
+      Page4ResultCChoiceAInput: '',
+      Page4ResultCChoiceBInput: '',
+      Page5ResultInput: '',
+      Page5ResultChoiceAInput: '',
+      Page5ResultChoiceBInput: '',
+      Page5ResultChoiceCInput: '',
+      Page6EndingAInput: '',
+      Page6EndingBInput: '',
+      Page6EndingCInput: ''
     });
-  };
-
-  addToUsers = event => {
-    event.preventDefault();
-    this.setState({
-      userName: event.target.value,
-      password: event.target.value
-    });
-    console.log('UserName is:     ' + this.state.username);
-    console.log('Password is:     ' + this.state.password);
-
-    axios
-      .post('https://limitless-peak-19224.herokuapp.com/newuser', {
-        username: this.state.username,
-        password: this.state.password
-      })
-      .then(response => {
-        console.log(response, 'Hey it worked!');
-      })
-      .catch(err => {
-        console.log(err, 'Something broke, try again!');
-      });
-    this.setState({ userName: '', password: '' });
   };
 
   render() {
     return (
-      <div className="adminForms">
+      <div className="">
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
-        <form className="addProduct">
-          <h1 className="productAddTitle">
-            Add a Product:
+        <form className="">
+          <h1 className="">
+            Add a Story:
           </h1>
           <ul>
-            <div className="productEntryContainer">
-              <li className="productAddList">
+            <div className="">
+              <li className="">
                 <input
-                  className="productAddForm"
-                  name="userId"
-                  onChange={this.handleuserId}
+                  className=""
+                  name="Page1Title"
+                  onChange={this.handlePage1Title}
                   type="text"
-                  value={this.state.userId}
-                  placeholder="User ID:"
+                  value={this.state.Page1Title}
+                  placeholder="Page 1 Title:"
                 />
               </li>
-              <li className="productAddList">
+              <li className="">
                 <input
-                  className="productAddForm"
-                  name="picture"
-                  onChange={this.handlepicture}
+                  className=""
+                  name="Page1ChoiceAInput"
+                  onChange={this.handlePage1ChoiceAInput}
                   type="text"
-                  value={this.state.picture}
-                  placeholder="Picture URL:"
+                  value={this.state.Page1ChoiceAInput}
+                  placeholder="Page 1 Choice A Input:"
                 />
               </li>
-              <li className="productAddList">
+              <li className="">
                 <input
-                  className="productAddForm"
-                  name="name"
-                  onChange={this.handlename}
+                  className=""
+                  name="Page1ChoiceBInput"
+                  onChange={this.handlePage1ChoiceBInput}
                   type="text"
-                  value={this.state.name}
-                  placeholder="Name:"
+                  value={this.state.Page1ChoiceBInput}
+                  placeholder="Page 1 Choice B Input:"
                 />
               </li>
-              <li className="productAddList">
+              <li className="">
                 <input
-                  className="productAddForm"
-                  name="description"
-                  onChange={this.handledescription}
+                  className=""
+                  name="Page1ChoiceCInput"
+                  onChange={this.handlePage1ChoiceCInput}
                   type="text"
-                  value={this.state.description}
-                  placeholder="Description:"
+                  value={this.state.Page1ChoiceCInput}
+                  placeholder="Page 1 Choice C Input:"
                 />
               </li>
-              <li className="productAddList">
+              <li className="">
                 <input
-                  className="productAddForm"
-                  name="price"
-                  onChange={this.handleprice}
+                  className=""
+                  name="Page2ResultAInput"
+                  onChange={this.handlePage2ResultAInput}
                   type="text"
-                  value={this.state.price}
-                  placeholder="Price:"
+                  value={this.state.Page2ResultAInput}
+                  placeholder="Page 2 Result A Input:"
                 />
               </li>
-              <li className="productAddList">
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultBInput"
+                  onChange={this.handlePage2ResultBInput}
+                  type="text"
+                  value={this.state.Page2ResultBInput}
+                  placeholder="Page 2 Result B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultCInput"
+                  onChange={this.handlePage2ResultCInput}
+                  type="text"
+                  value={this.state.Page2ResultCInput}
+                  placeholder="Page 2 Result C Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultAChoiceAInput"
+                  onChange={this.handlePage2ResultAChoiceAInput}
+                  type="text"
+                  value={this.state.Page2ResultAChoiceAInput}
+                  placeholder="Page 2 Result A Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultAChoiceBInput"
+                  onChange={this.handlePage2ResultAChoiceBInput}
+                  type="text"
+                  value={this.state.Page2ResultAChoiceBInput}
+                  placeholder="Page 2 Result A Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultBChoiceAInput"
+                  onChange={this.handlePage2ResultBChoiceAInput}
+                  type="text"
+                  value={this.state.Page2ResultBChoiceAInput}
+                  placeholder="Page 2 Result B Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultBChoiceBInput"
+                  onChange={this.handlePage2ResultBChoiceBInput}
+                  type="text"
+                  value={this.state.Page2ResultBChoiceBInput}
+                  placeholder="Page 2 Result B Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultCChoiceAInput"
+                  onChange={this.handlePage2ResultCChoiceAInput}
+                  type="text"
+                  value={this.state.Page2ResultCChoiceAInput}
+                  placeholder="Page 2 Result C Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page2ResultCChoiceBInput"
+                  onChange={this.handlePage2ResultCChoiceBInput}
+                  type="text"
+                  value={this.state.Page2ResultCChoiceBInput}
+                  placeholder="Page 2 Result C Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultAInput"
+                  onChange={this.handlePage3ResultAInput}
+                  type="text"
+                  value={this.state.Page3ResultAInput}
+                  placeholder="Page 3 Result A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultBInput"
+                  onChange={this.handlePage3ResultBInput}
+                  type="text"
+                  value={this.state.Page3ResultBInput}
+                  placeholder="Page 3 Result B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultCInput"
+                  onChange={this.handlePage3ResultCInput}
+                  type="text"
+                  value={this.state.Page3ResultCInput}
+                  placeholder="Page 3 Result C Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultDInput"
+                  onChange={this.handlePage3ResultDInput}
+                  type="text"
+                  value={this.state.Page3ResultDInput}
+                  placeholder="Page 3 Result D Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultAChoiceAInput"
+                  onChange={this.handlePage3ResultAChoiceAInput}
+                  type="text"
+                  value={this.state.Page3ResultAChoiceAInput}
+                  placeholder="Page 3 Result A Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultAChoiceBInput"
+                  onChange={this.handlePage3ResultAChoiceBInput}
+                  type="text"
+                  value={this.state.Page3ResultAChoiceBInput}
+                  placeholder="Page 3 Result A Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultBChoiceAInput"
+                  onChange={this.handlePage3ResultBChoiceAInput}
+                  type="text"
+                  value={this.state.Page3ResultBChoiceAInput}
+                  placeholder="Page 3 Result B Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultBChoiceBInput"
+                  onChange={this.handlePage3ResultBChoiceBInput}
+                  type="text"
+                  value={this.state.Page3ResultBChoiceBInput}
+                  placeholder="Page 3 Result B Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultCChoiceAInput"
+                  onChange={this.handlePage3ResultCChoiceAInput}
+                  type="text"
+                  value={this.state.Page3ResultCChoiceAInput}
+                  placeholder="Page 3 Result C Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultCChoiceBInput"
+                  onChange={this.handlePage3ResultCChoiceBInput}
+                  type="text"
+                  value={this.state.Page3ResultCChoiceBInput}
+                  placeholder="Page 3 Result C Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultDChoiceAInput"
+                  onChange={this.handlePage3ResultDChoiceAInput}
+                  type="text"
+                  value={this.state.Page3ResultDChoiceAInput}
+                  placeholder="Page 3 Result D Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page3ResultDChoiceBInput"
+                  onChange={this.handlePage3ResultDChoiceBInput}
+                  type="text"
+                  value={this.state.Page3ResultDChoiceBInput}
+                  placeholder="Page 3 Result D Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultAInput"
+                  onChange={this.handlePage4ResultAInput}
+                  type="text"
+                  value={this.state.Page4ResultAInput}
+                  placeholder="Page 4 Result A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultBInput"
+                  onChange={this.handlePage4ResultBInput}
+                  type="text"
+                  value={this.state.Page4ResultBInput}
+                  placeholder="Page 4 Result B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultCInput"
+                  onChange={this.handlePage4ResultCInput}
+                  type="text"
+                  value={this.state.Page4ResultCInput}
+                  placeholder="Page 4 Result C Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultAChoiceAInput"
+                  onChange={this.handlePage4ResultAChoiceAInput}
+                  type="text"
+                  value={this.state.Page4ResultAChoiceAInput}
+                  placeholder="Page 4 Result A Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultAChoiceBInput"
+                  onChange={this.handlePage4ResultAChoiceBInput}
+                  type="text"
+                  value={this.state.Page4ResultAChoiceBInput}
+                  placeholder="Page 4 Result A Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultBChoiceAInput"
+                  onChange={this.handlePage4ResultBChoiceAInput}
+                  type="text"
+                  value={this.state.Page4ResultBChoiceAInput}
+                  placeholder="Page 4 Result B Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultBChoiceBInput"
+                  onChange={this.handlePage4ResultBChoiceBInput}
+                  type="text"
+                  value={this.state.Page4ResultBChoiceBInput}
+                  placeholder="Page 4 Result B Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultCChoiceAInput"
+                  onChange={this.handlePage4ResultCChoiceAInput}
+                  type="text"
+                  value={this.state.Page4ResultCChoiceAInput}
+                  placeholder="Page 4 Result C Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page4ResultCChoiceBInput"
+                  onChange={this.handlePage4ResultCChoiceBInput}
+                  type="text"
+                  value={this.state.Page4ResultCChoiceBInput}
+                  placeholder="Page 4 Result C Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page5ResultInput"
+                  onChange={this.handlePage5ResultInput}
+                  type="text"
+                  value={this.state.Page5ResultInput}
+                  placeholder="Page 5 Result Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page5ResultChoiceAInput"
+                  onChange={this.handlePage5ResultChoiceAInput}
+                  type="text"
+                  value={this.state.Page5ResultChoiceAInput}
+                  placeholder="Page 5 Result Choice A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page5ResultChoiceBInput"
+                  onChange={this.handlePage5ResultChoiceBInput}
+                  type="text"
+                  value={this.state.Page5ResultChoiceBInput}
+                  placeholder="Page 5 Result Choice B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page5ResultChoiceCInput"
+                  onChange={this.handlePage5ResultChoiceCInput}
+                  type="text"
+                  value={this.state.Page5ResultChoiceCInput}
+                  placeholder="Page 5 Result Choice C Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page6EndingAInput"
+                  onChange={this.handlePage6EndingAInput}
+                  type="text"
+                  value={this.state.Page6EndingAInput}
+                  placeholder="Page 6 Ending A Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page6EndingBInput"
+                  onChange={this.handlePage6EndingBInput}
+                  type="text"
+                  value={this.state.Page6EndingBInput}
+                  placeholder="Page 6 Ending B Input:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className=""
+                  name="Page6EndingCInput"
+                  onChange={this.handlePage6EndingCInput}
+                  type="text"
+                  value={this.state.Page6EndingCInput}
+                  placeholder="Page 6 Ending C Input:"
+                />
+              </li>
+              <li className="">
                 <button
-                  className="productAddSubButton"
+                  className=""
                   type="submit"
-                  onClick={this.addToProductList}
+                  onClick={this.addToStory}
                 >
-                  Add Item<i className="submitButton" aria-hidden="true" />
+                  Add Story<i className="" aria-hidden="true" />
                 </button>
               </li>
             </div>
           </ul>
-        </form>
-
-        <form className="addUser">
-          <h1 className="adminUsers">Add a User:</h1>
-          <div className="addUsersContainer">
-            <ul className="usersAddList">
-              <li>
-                <input
-                  className="usersAddForm"
-                  name="username"
-                  onChange={this.handleUserName}
-                  type="text"
-                  value={this.state.username}
-                  placeholder="Username:"
-                />
-              </li>
-              <li>
-                <input
-                  className="usersAddForm"
-                  name="password"
-                  onChange={this.handlePassword}
-                  type="text"
-                  value={this.state.Password}
-                  placeholder="Password:"
-                />
-              </li>
-              <li><input className="usersAddButton" name="admin" type="checkbox" id="adminCheck" value="checkbox"></input>
-                <label htmlFor="adminCheck">Admin</label></li>
-              <li>
-                <button
-                  className="usersAddSubButton"
-                  type="submit"
-                  onClick={this.addToUsers}
-                >
-                  Add User<i className="submitButton" aria-hidden="true" />
-                </button>
-              </li>
-
-            </ul>
-          </div>
         </form>
       </div>
     );
