@@ -400,7 +400,7 @@ class CreateStory extends Component {
             <div className="">
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page1Title"
                   onChange={this.handlePage1Title}
                   type="text"
@@ -408,9 +408,11 @@ class CreateStory extends Component {
                   placeholder="Page 1 Title:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page1ChoiceAInput"
                   onChange={this.handlePage1ChoiceAInput}
                   type="text"
@@ -420,7 +422,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page1ChoiceBInput"
                   onChange={this.handlePage1ChoiceBInput}
                   type="text"
@@ -430,7 +432,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page1ChoiceCInput"
                   onChange={this.handlePage1ChoiceCInput}
                   type="text"
@@ -438,9 +440,11 @@ class CreateStory extends Component {
                   placeholder="Page 1 Choice C Input:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultAInput"
                   onChange={this.handlePage2ResultAInput}
                   type="text"
@@ -450,7 +454,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultBInput"
                   onChange={this.handlePage2ResultBInput}
                   type="text"
@@ -460,7 +464,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultCInput"
                   onChange={this.handlePage2ResultCInput}
                   type="text"
@@ -468,9 +472,10 @@ class CreateStory extends Component {
                   placeholder="Page 2 Result C Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultAChoiceAInput"
                   onChange={this.handlePage2ResultAChoiceAInput}
                   type="text"
@@ -480,7 +485,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultAChoiceBInput"
                   onChange={this.handlePage2ResultAChoiceBInput}
                   type="text"
@@ -488,9 +493,10 @@ class CreateStory extends Component {
                   placeholder="Page 2 Result A Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultBChoiceAInput"
                   onChange={this.handlePage2ResultBChoiceAInput}
                   type="text"
@@ -500,7 +506,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultBChoiceBInput"
                   onChange={this.handlePage2ResultBChoiceBInput}
                   type="text"
@@ -508,9 +514,10 @@ class CreateStory extends Component {
                   placeholder="Page 2 Result B Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultCChoiceAInput"
                   onChange={this.handlePage2ResultCChoiceAInput}
                   type="text"
@@ -520,7 +527,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page2ResultCChoiceBInput"
                   onChange={this.handlePage2ResultCChoiceBInput}
                   type="text"
@@ -528,9 +535,11 @@ class CreateStory extends Component {
                   placeholder="Page 2 Result C Choice B Input:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultAInput"
                   onChange={this.handlePage3ResultAInput}
                   type="text"
@@ -540,7 +549,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultBInput"
                   onChange={this.handlePage3ResultBInput}
                   type="text"
@@ -550,7 +559,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultCInput"
                   onChange={this.handlePage3ResultCInput}
                   type="text"
@@ -560,7 +569,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultDInput"
                   onChange={this.handlePage3ResultDInput}
                   type="text"
@@ -568,9 +577,10 @@ class CreateStory extends Component {
                   placeholder="Page 3 Result D Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultAChoiceAInput"
                   onChange={this.handlePage3ResultAChoiceAInput}
                   type="text"
@@ -580,7 +590,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultAChoiceBInput"
                   onChange={this.handlePage3ResultAChoiceBInput}
                   type="text"
@@ -588,9 +598,10 @@ class CreateStory extends Component {
                   placeholder="Page 3 Result A Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultBChoiceAInput"
                   onChange={this.handlePage3ResultBChoiceAInput}
                   type="text"
@@ -600,7 +611,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultBChoiceBInput"
                   onChange={this.handlePage3ResultBChoiceBInput}
                   type="text"
@@ -608,9 +619,10 @@ class CreateStory extends Component {
                   placeholder="Page 3 Result B Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultCChoiceAInput"
                   onChange={this.handlePage3ResultCChoiceAInput}
                   type="text"
@@ -620,7 +632,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultCChoiceBInput"
                   onChange={this.handlePage3ResultCChoiceBInput}
                   type="text"
@@ -628,9 +640,10 @@ class CreateStory extends Component {
                   placeholder="Page 3 Result C Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultDChoiceAInput"
                   onChange={this.handlePage3ResultDChoiceAInput}
                   type="text"
@@ -640,7 +653,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page3ResultDChoiceBInput"
                   onChange={this.handlePage3ResultDChoiceBInput}
                   type="text"
@@ -648,9 +661,11 @@ class CreateStory extends Component {
                   placeholder="Page 3 Result D Choice B Input:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultAInput"
                   onChange={this.handlePage4ResultAInput}
                   type="text"
@@ -660,7 +675,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultBInput"
                   onChange={this.handlePage4ResultBInput}
                   type="text"
@@ -670,7 +685,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultCInput"
                   onChange={this.handlePage4ResultCInput}
                   type="text"
@@ -678,9 +693,10 @@ class CreateStory extends Component {
                   placeholder="Page 4 Result C Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultAChoiceAInput"
                   onChange={this.handlePage4ResultAChoiceAInput}
                   type="text"
@@ -690,7 +706,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultAChoiceBInput"
                   onChange={this.handlePage4ResultAChoiceBInput}
                   type="text"
@@ -698,9 +714,10 @@ class CreateStory extends Component {
                   placeholder="Page 4 Result A Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultBChoiceAInput"
                   onChange={this.handlePage4ResultBChoiceAInput}
                   type="text"
@@ -710,7 +727,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultBChoiceBInput"
                   onChange={this.handlePage4ResultBChoiceBInput}
                   type="text"
@@ -718,9 +735,10 @@ class CreateStory extends Component {
                   placeholder="Page 4 Result B Choice B Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultCChoiceAInput"
                   onChange={this.handlePage4ResultCChoiceAInput}
                   type="text"
@@ -730,7 +748,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page4ResultCChoiceBInput"
                   onChange={this.handlePage4ResultCChoiceBInput}
                   type="text"
@@ -738,9 +756,11 @@ class CreateStory extends Component {
                   placeholder="Page 4 Result C Choice B Input:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page5ResultInput"
                   onChange={this.handlePage5ResultInput}
                   type="text"
@@ -748,9 +768,10 @@ class CreateStory extends Component {
                   placeholder="Page 5 Result Input:"
                 />
               </li>
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page5ResultChoiceAInput"
                   onChange={this.handlePage5ResultChoiceAInput}
                   type="text"
@@ -760,7 +781,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page5ResultChoiceBInput"
                   onChange={this.handlePage5ResultChoiceBInput}
                   type="text"
@@ -770,7 +791,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page5ResultChoiceCInput"
                   onChange={this.handlePage5ResultChoiceCInput}
                   type="text"
@@ -778,9 +799,11 @@ class CreateStory extends Component {
                   placeholder="Page 5 Result Choice C Input:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page6EndingAInput"
                   onChange={this.handlePage6EndingAInput}
                   type="text"
@@ -790,7 +813,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page6EndingBInput"
                   onChange={this.handlePage6EndingBInput}
                   type="text"
@@ -800,7 +823,7 @@ class CreateStory extends Component {
               </li>
               <li className="">
                 <input
-                  className=""
+                  className="inputForm"
                   name="Page6EndingCInput"
                   onChange={this.handlePage6EndingCInput}
                   type="text"
@@ -808,6 +831,8 @@ class CreateStory extends Component {
                   placeholder="Page 6 Ending C Input:"
                 />
               </li>
+              <br />
+              <br />
               <li className="">
                 <button
                   className=""
