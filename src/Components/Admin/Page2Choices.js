@@ -96,7 +96,7 @@ class Page2Choices extends Component {
                   className="inputForm"
                   name="page2ChoiceA"
                   onChange={this.handlepage2ChoiceA}
-                  type="text"
+                  type="textarea"
                   value={this.state.page2ChoiceA}
                   placeholder="Choice A:"
                 />
@@ -106,7 +106,7 @@ class Page2Choices extends Component {
                   className="inputForm"
                   name="page2ChoiceB"
                   onChange={this.handlepage2ChoiceB}
-                  type="text"
+                  type="textarea"
                   value={this.state.page2ChoiceB}
                   placeholder="Choice B:"
                 />
@@ -116,7 +116,7 @@ class Page2Choices extends Component {
                   className="inputForm"
                   name="page2ChoiceC"
                   onChange={this.handlepage2ChoiceC}
-                  type="text"
+                  type="textarea"
                   value={this.state.page2ChoiceC}
                   placeholder="Choice C:"
                 />
@@ -126,7 +126,7 @@ class Page2Choices extends Component {
                   className="inputForm"
                   name="page2ChoiceD"
                   onChange={this.handlepage2ChoiceD}
-                  type="text"
+                  type="textarea"
                   value={this.state.page2ChoiceD}
                   placeholder="Choice D:"
                 />

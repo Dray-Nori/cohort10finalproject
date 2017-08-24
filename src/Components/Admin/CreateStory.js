@@ -9,6 +9,7 @@ class CreateStory extends Component {
     this.showMore = this.showMore.bind(this, true);
     this.handlestoryTitle = this.handlestoryTitle.bind(this);
     this.handlestorySummary = this.handlestorySummary.bind(this);
+    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -18,7 +19,8 @@ class CreateStory extends Component {
       rowsToDisplay : 0,
       expanded: false,
       storyTitle: '',
-      storySummary: ''
+      storySummary: '',
+      backgroundUrl: ''
     };
   }
 
@@ -27,6 +29,9 @@ class CreateStory extends Component {
   }
   handlestorySummary(event) {
     this.setState({ storySummary: event.target.value });
+  }
+  handlebackgroundUrl(event) {
+    this.setState({ backgroundUrl: event.target.value });
   }
 
   showMore() {
@@ -39,7 +44,8 @@ class CreateStory extends Component {
     event.preventDefault();
     this.setState({
       storyTitle: event.target.value,
-      storySummary: event.target.value
+      storySummary: event.target.value,
+      backgroundUrl: event.target.value
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
     console.log('Summary of the story is:     ' + this.state.storySummary);
@@ -80,7 +86,7 @@ class CreateStory extends Component {
                   className="inputForm"
                   name="storyTitle"
                   onChange={this.handlestoryTitle}
-                  type="text"
+                  type="textarea"
                   value={this.state.storyTitle}
                   placeholder="Story Title:"
                 />
@@ -90,9 +96,19 @@ class CreateStory extends Component {
                   className="inputForm"
                   name="storySummary"
                   onChange={this.handlestorySummary}
-                  type="text"
+                  type="textarea"
                   value={this.state.storySummary}
                   placeholder="Story Summary:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="backgroundUrl"
+                  onChange={this.handlebackgroundUrl}
+                  type="textarea"
+                  value={this.state.backgroundUrl}
+                  placeholder="Background Image URL:"
                 />
               </li>
               <li className="">

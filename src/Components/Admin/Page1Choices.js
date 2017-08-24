@@ -96,7 +96,7 @@ class Page1Choices extends Component {
                   className="inputForm"
                   name="page1ChoiceA"
                   onChange={this.handlepage1ChoiceA}
-                  type="text"
+                  type="textarea"
                   value={this.state.page1ChoiceA}
                   placeholder="Choice A:"
                 />
@@ -106,7 +106,7 @@ class Page1Choices extends Component {
                   className="inputForm"
                   name="page1ChoiceB"
                   onChange={this.handlepage1ChoiceB}
-                  type="text"
+                  type="textarea"
                   value={this.state.page1ChoiceB}
                   placeholder="Choice B:"
                 />
@@ -116,7 +116,7 @@ class Page1Choices extends Component {
                   className="inputForm"
                   name="page1ChoiceC"
                   onChange={this.handlepage1ChoiceC}
-                  type="text"
+                  type="textarea"
                   value={this.state.page1ChoiceC}
                   placeholder="Choice C:"
                 />
@@ -126,7 +126,7 @@ class Page1Choices extends Component {
                   className="inputForm"
                   name="page1ChoiceD"
                   onChange={this.handlepage1ChoiceD}
-                  type="text"
+                  type="textarea"
                   value={this.state.page1ChoiceD}
                   placeholder="Choice D:"
                 />
