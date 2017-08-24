@@ -2,31 +2,44 @@ import React, { Component } from 'react';
 import '../../styles/admin.css';
 const axios = require('axios');
 
-class CreateStory extends Component {
+class Page2Results extends Component {
   constructor(props) {
     super(props);
 
     this.showMore = this.showMore.bind(this, true);
-    this.handlestoryTitle = this.handlestoryTitle.bind(this);
-    this.handlestorySummary = this.handlestorySummary.bind(this);
+    this.handlepage2ResultA = this.handlepage2ResultA.bind(this);
+    this.handlepage2ResultB = this.handlepage2ResultB.bind(this);
+    this.handlepage2ResultC = this.handlepage2ResultC.bind(this);
+    this.handlepage2ResultD = this.handlepage2ResultD.bind(this);
 
     this.state = {
       navigation: [
         {name: 'Home', 'link': '/'},
-        {name: 'Page 1 Choices', 'link': '/admin/page1choices'}
+        {name: 'Title and Summary', 'link': '/admin/createstory'},
+        {name: 'Page 1 Choices', 'link': '/admin/page1choices'},
+        {name: 'Page 2 Results', 'link': '/admin/page2results'},
+        {name: 'Page 2 Choices', 'link': '/admin/page2choices'}
         ],
       rowsToDisplay : 0,
       expanded: false,
-      storyTitle: '',
-      storySummary: ''
+      page2ResultA: '',
+      page2ResultB: '',
+      page2ResultC: '',
+      page2ResultD: ''
     };
   }
 
-  handlestoryTitle(event) {
-    this.setState({ storyTitle: event.target.value });
+  handlepage2ResultA(event) {
+    this.setState({ page2ResultA: event.target.value });
   }
-  handlestorySummary(event) {
-    this.setState({ storySummary: event.target.value });
+  handlepage2ResultB(event) {
+    this.setState({ page2ResultB: event.target.value });
+  }
+  handlepage2ResultC(event) {
+    this.setState({ page2ResultC: event.target.value });
+  }
+  handlepage2ResultD(event) {
+    this.setState({ page2ResultD: event.target.value });
   }
 
   showMore() {
@@ -38,8 +51,10 @@ class CreateStory extends Component {
   addToStory = event => {
     event.preventDefault();
     this.setState({
-      storyTitle: event.target.value,
-      storySummary: event.target.value
+      page2ResultA: event.target.value,
+      page2ResultB: event.target.value,
+      page2ResultC: event.target.value,
+      page2ResultD: event.target.value,
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
     console.log('Summary of the story is:     ' + this.state.storySummary);
@@ -56,8 +71,10 @@ class CreateStory extends Component {
         console.log(err, 'Story not added, try again');
       });
     this.setState({
-      storyTitle: '',
-      storySummary: ''
+      page2ResultA: '',
+      page2ResultB: '',
+      page2ResultC: '',
+      page2ResultD: ''
     });
   };
 
@@ -68,31 +85,51 @@ class CreateStory extends Component {
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
         <form className="">
           <h1 className="">
-            Add a Story
+            Page 2 Results
           </h1>
           <h2 className="">
-            Enter a title for your story:
+            Enter a result for Page 1 Choices:
           </h2>
           <ul>
             <div className="">
               <li className="">
                 <input
                   className="inputForm"
-                  name="storyTitle"
-                  onChange={this.handlestoryTitle}
+                  name="page2ResultA"
+                  onChange={this.handlepage2ResultA}
                   type="text"
-                  value={this.state.storyTitle}
-                  placeholder="Story Title:"
+                  value={this.state.page2ResultA}
+                  placeholder="Page 2 Result A:"
+                  />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="page2ResultB"
+                  onChange={this.handlepage2ResultB}
+                  type="text"
+                  value={this.state.page2ResultB}
+                  placeholder="Page 2 Result B:"
                 />
               </li>
               <li className="">
                 <input
                   className="inputForm"
-                  name="storySummary"
-                  onChange={this.handlestorySummary}
+                  name="page2ResultC"
+                  onChange={this.handlepage2ResultC}
                   type="text"
-                  value={this.state.storySummary}
-                  placeholder="Story Summary:"
+                  value={this.state.page2ResultC}
+                  placeholder="Page 2 Result C:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="page2ResultD"
+                  onChange={this.handlepage2ResultD}
+                  type="text"
+                  value={this.state.page2ResultD}
+                  placeholder="Page 2 Result D:"
                 />
               </li>
               <li className="">
@@ -101,7 +138,7 @@ class CreateStory extends Component {
                   type="submit"
                   onClick={this.addToStory}
                 >
-                  Add Title and Summary<i className="" aria-hidden="true" />
+                  Add Page 2 Results<i className="" aria-hidden="true" />
                 </button>
               </li>
             </div>
@@ -125,4 +162,4 @@ class CreateStory extends Component {
   }
 }
 
-export default CreateStory;
+export default Page2Results;
