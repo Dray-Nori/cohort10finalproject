@@ -2,44 +2,48 @@ import React, { Component } from 'react';
 import '../../styles/admin.css';
 const axios = require('axios');
 
-class Page2Results extends Component {
+class Ending extends Component {
   constructor(props) {
     super(props);
 
     this.showMore = this.showMore.bind(this, true);
-    this.handlepage2ResultA = this.handlepage2ResultA.bind(this);
-    this.handlepage2ResultB = this.handlepage2ResultB.bind(this);
-    this.handlepage2ResultC = this.handlepage2ResultC.bind(this);
-    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
+    this.handleendingChoiceA = this.handleendingChoiceA.bind(this);
+    this.handleendingChoiceB = this.handleendingChoiceB.bind(this);
+    this.handleendingChoiceC = this.handleendingChoiceC.bind(this);
 
     this.state = {
       navigation: [
         {name: 'Home', 'link': '/'},
         {name: 'Title and Summary', 'link': '/admin/createstory'},
         {name: 'Page 1 Choices', 'link': '/admin/page1choices'},
-        {name: 'Page 2 Choices', 'link': '/admin/page2choices'}
+        {name: 'Page 2 Results', 'link': '/admin/page2results'},
+        {name: 'Page 2 Choices', 'link': '/admin/page2choices'},
+        {name: 'Page 3 Results', 'link': '/admin/page3results'},
+        {name: 'Page 3 Choices', 'link': '/admin/page3choices'},
+        {name: 'Page 4 Results', 'link': '/admin/page4results'},
+        {name: 'Page 4 Choices', 'link': '/admin/page4choices'},
+        {name: 'Page 5 Results', 'link': '/admin/page5results'},
+        {name: 'Page 5 Choices', 'link': '/admin/page5choices'}
         ],
       rowsToDisplay : 0,
       expanded: false,
-      page2ResultA: '',
-      page2ResultB: '',
-      page2ResultC: '',
-      backgroundUrl: ''
-    };
+      endingChoiceA: '',
+      endingChoiceB: '',
+      endingChoiceC: ''
+    }
   }
 
-  handlepage2ResultA(event) {
-    this.setState({ page2ResultA: event.target.value });
+  handleendingChoiceA(event) {
+    this.setState({ endingChoiceA: event.target.value });
   }
-  handlepage2ResultB(event) {
-    this.setState({ page2ResultB: event.target.value });
+  handleendingChoiceB(event) {
+    this.setState({ endingChoiceB: event.target.value });
   }
-  handlepage2ResultC(event) {
-    this.setState({ page2ResultC: event.target.value });
+  handleendingChoiceC(event) {
+    this.setState({ endingChoiceC: event.target.value });
   }
-  handlebackgroundUrl(event) {
-    this.setState({ backgroundUrl: event.target.value });
-  }
+
+
 
   showMore() {
     this.state.rowsToDisplay === 0 ?
@@ -50,20 +54,16 @@ class Page2Results extends Component {
   addToStory = event => {
     event.preventDefault();
     this.setState({
-      page2ResultA: event.target.value,
-      page2ResultB: event.target.value,
-      page2ResultC: event.target.value,
-      backgroundUrl: event.target.value
+      endingChoiceA: event.target.value,
+      endingChoiceB: event.target.value,
+      endingChoiceC: event.target.value
     });
-    console.log('Title of the story is:     ' + this.state.storyTitle);
-    console.log('Summary of the story is:     ' + this.state.storySummary);
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        page2ResultA: event.target.value,
-        page2ResultB: event.target.value,
-        page2ResultC: event.target.value,
-        backgroundUrl: event.target.value
+        endingChoiceA: this.state.page5ChoiceA,
+        endingChoiceB: this.state.page5ChoiceB,
+        endingChoiceC: this.state.page5ChoiceC
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -72,10 +72,9 @@ class Page2Results extends Component {
         console.log(err, 'Story not added, try again');
       });
     this.setState({
-      page2ResultA: '',
-      page2ResultB: '',
-      page2ResultC: '',
-      backgroundUrl: ''
+      endingChoiceA: '',
+      endingChoiceB: '',
+      endingChoiceC: ''
     });
   };
 
@@ -86,60 +85,50 @@ class Page2Results extends Component {
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
         <form className="">
           <h1 className="">
-            Page 2 Results
+            Ending
           </h1>
           <h2 className="">
-            Enter a result for Page 1 Choices:
+            Enter up to 3 Choices for an Ending:
           </h2>
           <ul>
             <div className="">
               <li className="">
                 <input
                   className="inputForm"
-                  name="page2ResultA"
-                  onChange={this.handlepage2ResultA}
+                  name="endingChoiceA"
+                  onChange={this.handleendingChoiceA}
                   type="textarea"
-                  value={this.state.page2ResultA}
-                  placeholder="Page 2 Result A:"
-                  />
-              </li>
-              <li className="">
-                <input
-                  className="inputForm"
-                  name="page2ResultB"
-                  onChange={this.handlepage2ResultB}
-                  type="textarea"
-                  value={this.state.page2ResultB}
-                  placeholder="Page 2 Result B:"
+                  value={this.state.endingChoiceA}
+                  placeholder="Ending A:"
                 />
               </li>
               <li className="">
                 <input
                   className="inputForm"
-                  name="page2ResultC"
-                  onChange={this.handlepage2ResultC}
+                  name="endingChoiceB"
+                  onChange={this.handleendingChoiceB}
                   type="textarea"
-                  value={this.state.page2ResultC}
-                  placeholder="Page 2 Result C:"
+                  value={this.state.endingChoiceB}
+                  placeholder="Ending B:"
                 />
               </li>
               <li className="">
                 <input
                   className="inputForm"
-                  name="backgroundUrl"
-                  onChange={this.handlebackgroundUrl}
+                  name="endingChoiceC"
+                  onChange={this.handleendingChoiceC}
                   type="textarea"
-                  value={this.state.backgroundUrl}
-                  placeholder="Background URL:"
+                  value={this.state.endingChoiceC}
+                  placeholder="Ending C:"
                 />
               </li>
-              <li className="">
+            <li className="">
                 <button
                   className=""
                   type="submit"
                   onClick={this.addToStory}
                 >
-                  Add Page 2 Results<i className="" aria-hidden="true" />
+                  Add Ending<i className="" aria-hidden="true" />
                 </button>
               </li>
             </div>
@@ -163,4 +152,4 @@ class Page2Results extends Component {
   }
 }
 
-export default Page2Results;
+export default Ending;

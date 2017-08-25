@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import '../../styles/admin.css';
 const axios = require('axios');
 
-class Page2Results extends Component {
+class Page5Results extends Component {
   constructor(props) {
     super(props);
 
     this.showMore = this.showMore.bind(this, true);
-    this.handlepage2ResultA = this.handlepage2ResultA.bind(this);
-    this.handlepage2ResultB = this.handlepage2ResultB.bind(this);
-    this.handlepage2ResultC = this.handlepage2ResultC.bind(this);
+    this.handlepage5ResultA = this.handlepage5ResultA.bind(this);
     this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
@@ -17,25 +15,23 @@ class Page2Results extends Component {
         {name: 'Home', 'link': '/'},
         {name: 'Title and Summary', 'link': '/admin/createstory'},
         {name: 'Page 1 Choices', 'link': '/admin/page1choices'},
-        {name: 'Page 2 Choices', 'link': '/admin/page2choices'}
+        {name: 'Page 2 Results', 'link': '/admin/page2results'},
+        {name: 'Page 2 Choices', 'link': '/admin/page2choices'},
+        {name: 'Page 3 Choices', 'link': '/admin/page3choices'},
+        {name: 'Page 3 Results', 'link': '/admin/page3Results'},
+        {name: 'Page 4 Results', 'link': '/admin/page4Results'},
+        {name: 'Page 4 Choices', 'link': '/admin/page4choices'},
+        {name: 'Page 5 Choices', 'link': '/admin/page5choices'},
         ],
       rowsToDisplay : 0,
       expanded: false,
-      page2ResultA: '',
-      page2ResultB: '',
-      page2ResultC: '',
+      page4ResultA: '',
       backgroundUrl: ''
     };
   }
 
-  handlepage2ResultA(event) {
-    this.setState({ page2ResultA: event.target.value });
-  }
-  handlepage2ResultB(event) {
-    this.setState({ page2ResultB: event.target.value });
-  }
-  handlepage2ResultC(event) {
-    this.setState({ page2ResultC: event.target.value });
+  handlepage5ResultA(event) {
+    this.setState({ page5ResultA: event.target.value });
   }
   handlebackgroundUrl(event) {
     this.setState({ backgroundUrl: event.target.value });
@@ -50,9 +46,7 @@ class Page2Results extends Component {
   addToStory = event => {
     event.preventDefault();
     this.setState({
-      page2ResultA: event.target.value,
-      page2ResultB: event.target.value,
-      page2ResultC: event.target.value,
+      page5ResultA: event.target.value,
       backgroundUrl: event.target.value
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
@@ -60,9 +54,7 @@ class Page2Results extends Component {
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        page2ResultA: event.target.value,
-        page2ResultB: event.target.value,
-        page2ResultC: event.target.value,
+        page5ResultA: event.target.value,
         backgroundUrl: event.target.value
       })
       .then(response => {
@@ -72,9 +64,7 @@ class Page2Results extends Component {
         console.log(err, 'Story not added, try again');
       });
     this.setState({
-      page2ResultA: '',
-      page2ResultB: '',
-      page2ResultC: '',
+      page5ResultA: '',
       backgroundUrl: ''
     });
   };
@@ -86,42 +76,22 @@ class Page2Results extends Component {
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
         <form className="">
           <h1 className="">
-            Page 2 Results
+            Page 5 Results
           </h1>
           <h2 className="">
-            Enter a result for Page 1 Choices:
+            Enter a result for Page 4 Choices:
           </h2>
           <ul>
             <div className="">
               <li className="">
                 <input
                   className="inputForm"
-                  name="page2ResultA"
-                  onChange={this.handlepage2ResultA}
+                  name="page5ResultA"
+                  onChange={this.handlepage5ResultA}
                   type="textarea"
-                  value={this.state.page2ResultA}
-                  placeholder="Page 2 Result A:"
+                  value={this.state.page5ResultA}
+                  placeholder="Page 4 Result A:"
                   />
-              </li>
-              <li className="">
-                <input
-                  className="inputForm"
-                  name="page2ResultB"
-                  onChange={this.handlepage2ResultB}
-                  type="textarea"
-                  value={this.state.page2ResultB}
-                  placeholder="Page 2 Result B:"
-                />
-              </li>
-              <li className="">
-                <input
-                  className="inputForm"
-                  name="page2ResultC"
-                  onChange={this.handlepage2ResultC}
-                  type="textarea"
-                  value={this.state.page2ResultC}
-                  placeholder="Page 2 Result C:"
-                />
               </li>
               <li className="">
                 <input
@@ -139,7 +109,7 @@ class Page2Results extends Component {
                   type="submit"
                   onClick={this.addToStory}
                 >
-                  Add Page 2 Results<i className="" aria-hidden="true" />
+                  Add Page 3 Results<i className="" aria-hidden="true" />
                 </button>
               </li>
             </div>
@@ -163,4 +133,4 @@ class Page2Results extends Component {
   }
 }
 
-export default Page2Results;
+export default Page5Results;
