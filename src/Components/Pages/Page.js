@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Header from '../Header/Header'
+import StoryHeader from '../Header/StoryHeader'
 
 // import children
 // import "./Page.css";
@@ -35,7 +35,6 @@ class Page extends Component {
 
   onButtonPress = (e) => {
     e.preventDefault()
-    // console.log('prior stats', this.state.stats);
     let effect = this.state.options.find((opt) => {
       if (opt.next === e.target.value) {
         return true
@@ -64,19 +63,17 @@ class Page extends Component {
   };
 
   render() {
-    // console.log('state', this.state);
+    console.log('state', this.state);
     let options = this.state.options.map((opt) => {
       return (
         <button key={opt.next} value={opt.next} onClick={this.onButtonPress}>{opt.text}</button>
       )
     })
-    // let imgSrc = `Pages/${this.props.match.params.name}/${this.state.art}`;
-    // console.log('image source', imgSrc);
     return (
       <div className="storyPage">
-        <Header stats={this.state.stats} />
+        <StoryHeader stats={this.state.stats} />
         <br />
-        <img src={this.state.art} alt="this bullshit" />
+        <img src={this.state.art} alt="A relevant background image" />
         {this.state.text}
         <h6> Options </h6>
         {options}

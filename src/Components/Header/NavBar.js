@@ -10,7 +10,8 @@ class NavBar extends Component {
     this.state = {
       navigation: [
         {'name': 'Home', 'link': '/'},
-        {'name': 'Admin', 'link': '/Admin'}
+        {'name': 'Admin', 'link': '/Admin'},
+        {'name': 'Stories', 'link': '/stories'}
         ],
       rowsToDisplay : 0,
       expanded: false,

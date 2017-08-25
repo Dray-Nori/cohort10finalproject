@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import '../../styles/header.css';
-import Contributors from './Contributors.js';
-import NavBar from './NavBar.js';
-import Login from './Login.js';
+import Tracker from './Tracker.js';
 import Identification from './Identification.js';
 
-class Header extends Component {
+class StoryHeader extends Component {
   constructor(props) {
     super(props);
 
@@ -15,13 +13,11 @@ class Header extends Component {
   render() {
     return (
       <div className="headerContainer">
-        <Contributors />
-        <NavBar />
         <Identification />
-        <Login />
+        <Tracker stats={this.props.stats}/>
       </div>
     );
   }
 }
 
-export default Header;
+export default StoryHeader;
