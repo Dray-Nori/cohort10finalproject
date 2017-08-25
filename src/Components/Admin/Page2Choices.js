@@ -2,37 +2,44 @@ import React, { Component } from 'react';
 import '../../styles/admin.css';
 const axios = require('axios');
 
-class CreateStory extends Component {
+class Page2Choices extends Component {
   constructor(props) {
     super(props);
 
     this.showMore = this.showMore.bind(this, true);
-    this.handlestoryTitle = this.handlestoryTitle.bind(this);
-    this.handlestorySummary = this.handlestorySummary.bind(this);
-    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
+    this.handlepage2ChoiceA = this.handlepage2ChoiceA.bind(this);
+    this.handlepage2ChoiceB = this.handlepage2ChoiceB.bind(this);
+    this.handlepage2ChoiceC = this.handlepage2ChoiceC.bind(this);
+    this.handlepage2ChoiceD = this.handlepage2ChoiceD.bind(this);
 
     this.state = {
       navigation: [
         {name: 'Home', 'link': '/'},
-        {name: 'Page 1 Choices', 'link': '/admin/page1choices'}
+        {name: 'Title and Summary', 'link': '/admin/createstory'},
+        {name: 'Page 2 Results', 'link': '/admin/page2results'}
         ],
       rowsToDisplay : 0,
       expanded: false,
-      storyTitle: '',
-      storySummary: '',
-      backgroundUrl: ''
-    };
+      page2ChoiceA: '',
+      page2ChoiceB: '',
+      page2ChoiceC: '',
+      page2ChoiceD: ''
+    }
   }
 
-  handlestoryTitle(event) {
-    this.setState({ storyTitle: event.target.value });
+  handlepage2ChoiceA(event) {
+    this.setState({ page2ChoiceA: event.target.value });
   }
-  handlestorySummary(event) {
-    this.setState({ storySummary: event.target.value });
+  handlepage2ChoiceB(event) {
+    this.setState({ page2ChoiceB: event.target.value });
   }
-  handlebackgroundUrl(event) {
-    this.setState({ backgroundUrl: event.target.value });
+  handlepage2ChoiceC(event) {
+    this.setState({ page2ChoiceC: event.target.value });
   }
+  handlepage2ChoiceD(event) {
+    this.setState({ page2ChoiceD: event.target.value });
+  }
+
 
   showMore() {
     this.state.rowsToDisplay === 0 ?
@@ -43,17 +50,18 @@ class CreateStory extends Component {
   addToStory = event => {
     event.preventDefault();
     this.setState({
-      storyTitle: event.target.value,
-      storySummary: event.target.value,
-      backgroundUrl: event.target.value
+      page2ChoiceA: event.target.value,
+      page2ChoiceB: event.target.value,
+      page2ChoiceC: event.target.value,
+      page2ChoiceD: event.target.value
     });
-    console.log('Title of the story is:     ' + this.state.storyTitle);
-    console.log('Summary of the story is:     ' + this.state.storySummary);
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        storyTitle: this.state.storyTitle,
-        storySummary: this.state.storySummary
+        page2ChoiceA: this.state.page2ChoiceA,
+        page2ChoiceB: this.state.page2ChoiceB,
+        page2ChoiceC: this.state.page2ChoiceC,
+        page2ChoiceD: this.state.page2ChoiceD
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -62,8 +70,10 @@ class CreateStory extends Component {
         console.log(err, 'Story not added, try again');
       });
     this.setState({
-      storyTitle: '',
-      storySummary: ''
+      page2ChoiceA: '',
+      page2ChoiceB: '',
+      page2ChoiceC: '',
+      page2ChoiceD: ''
     });
   };
 
@@ -74,41 +84,51 @@ class CreateStory extends Component {
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
         <form className="">
           <h1 className="">
-            Add a Story
+            Page 2 Choices
           </h1>
           <h2 className="">
-            Enter a title for your story:
+            Enter up to 4 Choices for Page 2:
           </h2>
           <ul>
             <div className="">
               <li className="">
                 <input
                   className="inputForm"
-                  name="storyTitle"
-                  onChange={this.handlestoryTitle}
+                  name="page2ChoiceA"
+                  onChange={this.handlepage2ChoiceA}
                   type="textarea"
-                  value={this.state.storyTitle}
-                  placeholder="Story Title:"
+                  value={this.state.page2ChoiceA}
+                  placeholder="Choice A:"
                 />
               </li>
               <li className="">
                 <input
                   className="inputForm"
-                  name="storySummary"
-                  onChange={this.handlestorySummary}
+                  name="page2ChoiceB"
+                  onChange={this.handlepage2ChoiceB}
                   type="textarea"
-                  value={this.state.storySummary}
-                  placeholder="Story Summary:"
+                  value={this.state.page2ChoiceB}
+                  placeholder="Choice B:"
                 />
               </li>
               <li className="">
                 <input
                   className="inputForm"
-                  name="backgroundUrl"
-                  onChange={this.handlebackgroundUrl}
+                  name="page2ChoiceC"
+                  onChange={this.handlepage2ChoiceC}
                   type="textarea"
-                  value={this.state.backgroundUrl}
-                  placeholder="Background Image URL:"
+                  value={this.state.page2ChoiceC}
+                  placeholder="Choice C:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="page2ChoiceD"
+                  onChange={this.handlepage2ChoiceD}
+                  type="textarea"
+                  value={this.state.page2ChoiceD}
+                  placeholder="Choice D:"
                 />
               </li>
               <li className="">
@@ -117,7 +137,7 @@ class CreateStory extends Component {
                   type="submit"
                   onClick={this.addToStory}
                 >
-                  Add Title and Summary<i className="" aria-hidden="true" />
+                  Add Choices<i className="" aria-hidden="true" />
                 </button>
               </li>
             </div>
@@ -141,4 +161,4 @@ class CreateStory extends Component {
   }
 }
 
-export default CreateStory;
+export default Page2Choices;
