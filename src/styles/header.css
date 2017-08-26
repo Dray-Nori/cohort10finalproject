@@ -1,4 +1,154 @@
+* {
+  font-family: 'Share Tech', sans-serif;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
 .headerContainer {
   display: flex;
-  justify-content: space-between;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 300px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.userLoginForm {
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+  width: 75%;
+  background-color: white;
+  border-style: none;
+  outline-color: black;
+  outline-width: thin;
+  height: 30px;
+  border-color: #d3d3d3;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.userLoginForm:hover {
+  width: 85%;
+  border-color: #a0a0a0;
+  border-style: solid;
+}
+
+.userLoginForm:focus {
+  width: 95%;
+  background-color: white;
+  border-color: #a0a0a0;
+  border-style: solid;
+}
+
+.loginButton {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.loginButton:hover {
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.navigationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigationShowMore {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.navigationShowMore:hover {
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.contributorsShowMore {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.contributorsShowMore:hover {
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+li {
+  list-style: none;
+}
+
+li a{
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover{
+  color: white;
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.allProducts {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.contributeList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column wrap;
+}
+
+.navigationList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column wrap;
+}
+
+.navcontCombined {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.ident {
+  margin-left: 10px;
+  margin-right: 10px;
 }

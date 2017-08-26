@@ -1,3 +1,103 @@
+* {
+  font-family: 'Share Tech', sans-serif;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.bodyWrapper {
+  background: -webkit-linear-gradient(-45deg, #a9e4f7 0%,#0189b2 100%);
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 300px;
+}
+
+a{
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:hover{
+  color: white;
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+h1 {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+h2 {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+h3 {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
 .inputForm {
-  width: 20vw;
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+  width: 75%;
+  background-color: white;
+  border-style: none;
+  outline-color: black;
+  outline-width: thin;
+  height: 30px;
+  border-color: #d3d3d3;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.inputForm:hover {
+  width: 85%;
+  border-color: #a0a0a0;
+  border-style: solid;
+}
+
+.inputForm:focus {
+  width: 95%;
+  background-color: white;
+  border-color: #a0a0a0;
+  border-style: solid;
+}
+
+.submitBtn {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.submitBtn:hover {
+  font-weight: bold;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
 }

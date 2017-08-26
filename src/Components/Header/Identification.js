@@ -16,10 +16,10 @@ class Identification extends Component {
   render() {
     return (
       <div className="allProducts">
-        Your School Name:
-        Your Teacher Name:
-        Your User Name:
-        Your Avatar:
+        <span className="ident">Your School Name:</span>
+        <span className="ident">Your Teacher Name:</span>
+        <span className="ident">Your User Name:</span>
+        <span className="ident">Your Avatar:</span>
       </div>
     );
   }

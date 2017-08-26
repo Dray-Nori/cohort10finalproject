@@ -43,7 +43,7 @@ class Login extends Component {
     return (
         <div className="userLoginContainer">
           <form>
-              <input
+              <input autocomplete="off"
                 className="userLoginForm"
                 name="username"
                 onChange={this.handleUserName}
@@ -52,7 +52,7 @@ class Login extends Component {
                 placeholder="Username:"
               />
               <br />
-              <input
+              <input autocomplete="off"
                 className="userLoginForm"
                 name="password"
                 onChange={this.handlePassword}
