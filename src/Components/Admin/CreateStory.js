@@ -53,7 +53,8 @@ class CreateStory extends Component {
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
         storyTitle: this.state.storyTitle,
-        storySummary: this.state.storySummary
+        storySummary: this.state.storySummary,
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -63,7 +64,8 @@ class CreateStory extends Component {
       });
     this.setState({
       storyTitle: '',
-      storySummary: ''
+      storySummary: '',
+      backgroundUrl: ''
     });
   };
 

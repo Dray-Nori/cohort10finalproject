@@ -68,11 +68,11 @@ class Page3Results extends Component {
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        page3ResultA: event.target.value,
-        page3ResultB: event.target.value,
-        page3ResultC: event.target.value,
-        page3ResultD: event.target.value,
-        backgroundUrl: event.target.value
+        page3ResultA: this.state.page3ResultA,
+        page3ResultB: this.state.page3ResultB,
+        page3ResultC: this.state.page3ResultC,
+        page3ResultD: this.state.page3ResultD,
+        backgroundUrl: this.state.backgroungUrl
       })
       .then(response => {
         console.log(response, 'Story added!');

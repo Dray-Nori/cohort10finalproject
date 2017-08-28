@@ -54,8 +54,8 @@ class Page5Results extends Component {
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        page5ResultA: event.target.value,
-        backgroundUrl: event.target.value
+        page5ResultA: this.state.page5ResultA,
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');

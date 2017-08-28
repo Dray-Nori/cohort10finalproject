@@ -10,6 +10,7 @@ class Ending extends Component {
     this.handleendingChoiceA = this.handleendingChoiceA.bind(this);
     this.handleendingChoiceB = this.handleendingChoiceB.bind(this);
     this.handleendingChoiceC = this.handleendingChoiceC.bind(this);
+    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -29,7 +30,8 @@ class Ending extends Component {
       expanded: false,
       endingChoiceA: '',
       endingChoiceB: '',
-      endingChoiceC: ''
+      endingChoiceC: '',
+      backgroundUrl: ''
     }
   }
 
@@ -41,6 +43,9 @@ class Ending extends Component {
   }
   handleendingChoiceC(event) {
     this.setState({ endingChoiceC: event.target.value });
+  }
+  handlebackgroundUrl(event) {
+    this.setState({ backgroundUrl: event.target.value });
   }
 
 
@@ -56,14 +61,16 @@ class Ending extends Component {
     this.setState({
       endingChoiceA: event.target.value,
       endingChoiceB: event.target.value,
-      endingChoiceC: event.target.value
+      endingChoiceC: event.target.value,
+      backgroundUrl: event.target.value
     });
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
         endingChoiceA: this.state.page5ChoiceA,
         endingChoiceB: this.state.page5ChoiceB,
-        endingChoiceC: this.state.page5ChoiceC
+        endingChoiceC: this.state.page5ChoiceC,
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -74,7 +81,8 @@ class Ending extends Component {
     this.setState({
       endingChoiceA: '',
       endingChoiceB: '',
-      endingChoiceC: ''
+      endingChoiceC: '',
+      backgroundUrl: ''
     });
   };
 
@@ -120,6 +128,16 @@ class Ending extends Component {
                   type="textarea"
                   value={this.state.endingChoiceC}
                   placeholder="Ending C:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="backgroundUrl"
+                  onChange={this.handlebackgroundUrl}
+                  type="textarea"
+                  value={this.state.backgroundUrl}
+                  placeholder="Background URL:"
                 />
               </li>
             <li className="">

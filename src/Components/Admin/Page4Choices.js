@@ -13,6 +13,7 @@ class Page4Choices extends Component {
     this.handlepage4ChoiceD = this.handlepage4ChoiceD.bind(this);
     this.handlepage4ChoiceE = this.handlepage4ChoiceE.bind(this);
     this.handlepage4ChoiceF = this.handlepage4ChoiceF.bind(this);
+    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -33,7 +34,8 @@ class Page4Choices extends Component {
       page4ChoiceC: '',
       page4ChoiceD: '',
       page4ChoiceE: '',
-      page4ChoiceF: ''
+      page4ChoiceF: '',
+      backgroundUrl: ''
     }
   }
 
@@ -55,6 +57,9 @@ class Page4Choices extends Component {
   handlepage4ChoiceF(event) {
     this.setState({ page4ChoiceF: event.target.value });
   }
+  handlebackgroundUrl(event) {
+    this.setState({ backgroundUrl: event.target.value });
+  }
 
 
 
@@ -72,7 +77,8 @@ class Page4Choices extends Component {
       page4ChoiceC: event.target.value,
       page4ChoiceD: event.target.value,
       page4ChoiceE: event.target.value,
-      page4ChoiceF: event.target.value
+      page4ChoiceF: event.target.value,
+      backgroundUrl: event.target.value
     });
 
     axios
@@ -82,7 +88,8 @@ class Page4Choices extends Component {
         page4ChoiceC: this.state.page4ChoiceC,
         page4ChoiceD: this.state.page4ChoiceD,
         page4ChoiceE: this.state.page4ChoiceE,
-        page4ChoiceF: this.state.page4ChoiceF
+        page4ChoiceF: this.state.page4ChoiceF,
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -96,7 +103,8 @@ class Page4Choices extends Component {
       page4ChoiceC: '',
       page4ChoiceD: '',
       page4ChoiceE: '',
-      page4ChoiceF: ''
+      page4ChoiceF: '',
+      backgroundUrl: ''
     });
   };
 
@@ -173,6 +181,16 @@ class Page4Choices extends Component {
                   value={this.state.page4ChoiceF}
                   placeholder="Choice F:"
                 />
+            </li>
+            <li className="">
+              <input
+                className="inputForm"
+                name="backgroundUrl"
+                onChange={this.handlebackgroundUrl}
+                type="textarea"
+                value={this.state.backgroundUrl}
+                placeholder="Background URL:"
+              />
             </li>
             <li className="">
                 <button

@@ -13,6 +13,7 @@ class Page2Choices extends Component {
     this.handlepage2ChoiceD = this.handlepage2ChoiceD.bind(this);
     this.handlepage2ChoiceE = this.handlepage2ChoiceE.bind(this);
     this.handlepage2ChoiceF = this.handlepage2ChoiceF.bind(this);
+    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -29,7 +30,8 @@ class Page2Choices extends Component {
       page2ChoiceC: '',
       page2ChoiceD: '',
       page2ChoiceE: '',
-      page2ChoiceF: ''
+      page2ChoiceF: '',
+      backgroundUrl: ''
     }
   }
 
@@ -51,8 +53,9 @@ class Page2Choices extends Component {
   handlepage2ChoiceF(event) {
     this.setState({ page2ChoiceF: event.target.value });
   }
-
-
+  handlebackgroundUrl(event) {
+    this.setState({ backgroundUrl: event.target.value });
+  }
 
   showMore() {
     this.state.rowsToDisplay === 0 ?
@@ -68,7 +71,8 @@ class Page2Choices extends Component {
       page2ChoiceC: event.target.value,
       page2ChoiceD: event.target.value,
       page2ChoiceE: event.target.value,
-      page2ChoiceF: event.target.value
+      page2ChoiceF: event.target.value,
+      backgroundUrl: event.target.value
     });
 
     axios
@@ -78,7 +82,8 @@ class Page2Choices extends Component {
         page2ChoiceC: this.state.page2ChoiceC,
         page2ChoiceD: this.state.page2ChoiceD,
         page2ChoiceE: this.state.page2ChoiceE,
-        page2ChoiceF: this.state.page2ChoiceF
+        page2ChoiceF: this.state.page2ChoiceF,
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -92,7 +97,8 @@ class Page2Choices extends Component {
       page2ChoiceC: '',
       page2ChoiceD: '',
       page2ChoiceE: '',
-      page2ChoiceF: ''
+      page2ChoiceF: '',
+      backgroundUrl: ''
     });
   };
 
@@ -168,6 +174,16 @@ class Page2Choices extends Component {
                   type="textarea"
                   value={this.state.page2ChoiceF}
                   placeholder="Choice F:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="backgroundUrl"
+                  onChange={this.handlebackgroundUrl}
+                  type="textarea"
+                  value={this.state.backgroundUrl}
+                  placeholder="Background URL:"
                 />
               </li>
               <li className="">
