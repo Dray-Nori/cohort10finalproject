@@ -15,8 +15,11 @@ class Header extends Component {
   render() {
     return (
       <div className="headerContainer">
+        <img src={"draynorilogo.png"} />
+        <div className="navcontCombined">
         <Contributors />
         <NavBar />
+        </div>
         <Identification />
         <Login />
       </div>

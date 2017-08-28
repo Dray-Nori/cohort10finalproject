@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header.js';
 import Footer from '../Footer.js';
+import './HomePage.css';
 
 class Splash extends Component {
   constructor(props) {
@@ -16,9 +17,12 @@ class Splash extends Component {
     console.log(this.state.status);
     return (
       <div className="App">
-        <Header />
-        This is the Home Page
-        <Footer />
+        <div className="bodyWrapper">
+
+          <Header />
+
+          <Footer />
+        </div>
       </div>
     )
   }
