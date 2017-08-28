@@ -2,33 +2,36 @@ import React, { Component } from 'react';
 import '../../styles/admin.css';
 const axios = require('axios');
 
-class CreateStory extends Component {
+class Page5Results extends Component {
   constructor(props) {
     super(props);
 
     this.showMore = this.showMore.bind(this, true);
-    this.handlestoryTitle = this.handlestoryTitle.bind(this);
-    this.handlestorySummary = this.handlestorySummary.bind(this);
+    this.handlepage5ResultA = this.handlepage5ResultA.bind(this);
     this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
         {name: 'Home', 'link': '/'},
-        {name: 'Page 1 Choices', 'link': '/admin/page1choices'}
+        {name: 'Title and Summary', 'link': '/admin/createstory'},
+        {name: 'Page 1 Choices', 'link': '/admin/page1choices'},
+        {name: 'Page 2 Results', 'link': '/admin/page2results'},
+        {name: 'Page 2 Choices', 'link': '/admin/page2choices'},
+        {name: 'Page 3 Choices', 'link': '/admin/page3choices'},
+        {name: 'Page 3 Results', 'link': '/admin/page3Results'},
+        {name: 'Page 4 Results', 'link': '/admin/page4Results'},
+        {name: 'Page 4 Choices', 'link': '/admin/page4choices'},
+        {name: 'Page 5 Choices', 'link': '/admin/page5choices'},
         ],
       rowsToDisplay : 0,
       expanded: false,
-      storyTitle: '',
-      storySummary: '',
+      page4ResultA: '',
       backgroundUrl: ''
     };
   }
 
-  handlestoryTitle(event) {
-    this.setState({ storyTitle: event.target.value });
-  }
-  handlestorySummary(event) {
-    this.setState({ storySummary: event.target.value });
+  handlepage5ResultA(event) {
+    this.setState({ page5ResultA: event.target.value });
   }
   handlebackgroundUrl(event) {
     this.setState({ backgroundUrl: event.target.value });
@@ -43,8 +46,7 @@ class CreateStory extends Component {
   addToStory = event => {
     event.preventDefault();
     this.setState({
-      storyTitle: event.target.value,
-      storySummary: event.target.value,
+      page5ResultA: event.target.value,
       backgroundUrl: event.target.value
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
@@ -52,8 +54,7 @@ class CreateStory extends Component {
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        storyTitle: this.state.storyTitle,
-        storySummary: this.state.storySummary,
+        page5ResultA: this.state.page5ResultA,
         backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
@@ -63,8 +64,7 @@ class CreateStory extends Component {
         console.log(err, 'Story not added, try again');
       });
     this.setState({
-      storyTitle: '',
-      storySummary: '',
+      page5ResultA: '',
       backgroundUrl: ''
     });
   };
@@ -76,32 +76,22 @@ class CreateStory extends Component {
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
         <form className="">
           <h1 className="">
-            Add a Story
+            Page 5 Results
           </h1>
           <h2 className="">
-            Enter a title for your story:
+            Enter a result for Page 4 Choices:
           </h2>
           <ul>
             <div className="">
               <li className="">
                 <input
                   className="inputForm"
-                  name="storyTitle"
-                  onChange={this.handlestoryTitle}
+                  name="page5ResultA"
+                  onChange={this.handlepage5ResultA}
                   type="textarea"
-                  value={this.state.storyTitle}
-                  placeholder="Story Title:"
-                />
-              </li>
-              <li className="">
-                <input
-                  className="inputForm"
-                  name="storySummary"
-                  onChange={this.handlestorySummary}
-                  type="textarea"
-                  value={this.state.storySummary}
-                  placeholder="Story Summary:"
-                />
+                  value={this.state.page5ResultA}
+                  placeholder="Page 4 Result A:"
+                  />
               </li>
               <li className="">
                 <input
@@ -110,7 +100,7 @@ class CreateStory extends Component {
                   onChange={this.handlebackgroundUrl}
                   type="textarea"
                   value={this.state.backgroundUrl}
-                  placeholder="Background Image URL:"
+                  placeholder="Background URL:"
                 />
               </li>
               <li className="">
@@ -119,7 +109,7 @@ class CreateStory extends Component {
                   type="submit"
                   onClick={this.addToStory}
                 >
-                  Add Title and Summary<i className="" aria-hidden="true" />
+                  Add Page 3 Results<i className="" aria-hidden="true" />
                 </button>
               </li>
             </div>
@@ -143,4 +133,4 @@ class CreateStory extends Component {
   }
 }
 
-export default CreateStory;
+export default Page5Results;

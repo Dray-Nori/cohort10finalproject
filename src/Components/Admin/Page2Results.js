@@ -10,7 +10,6 @@ class Page2Results extends Component {
     this.handlepage2ResultA = this.handlepage2ResultA.bind(this);
     this.handlepage2ResultB = this.handlepage2ResultB.bind(this);
     this.handlepage2ResultC = this.handlepage2ResultC.bind(this);
-    this.handlepage2ResultD = this.handlepage2ResultD.bind(this);
     this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
@@ -18,7 +17,6 @@ class Page2Results extends Component {
         {name: 'Home', 'link': '/'},
         {name: 'Title and Summary', 'link': '/admin/createstory'},
         {name: 'Page 1 Choices', 'link': '/admin/page1choices'},
-        {name: 'Page 2 Results', 'link': '/admin/page2results'},
         {name: 'Page 2 Choices', 'link': '/admin/page2choices'}
         ],
       rowsToDisplay : 0,
@@ -26,7 +24,6 @@ class Page2Results extends Component {
       page2ResultA: '',
       page2ResultB: '',
       page2ResultC: '',
-      page2ResultD: '',
       backgroundUrl: ''
     };
   }
@@ -39,9 +36,6 @@ class Page2Results extends Component {
   }
   handlepage2ResultC(event) {
     this.setState({ page2ResultC: event.target.value });
-  }
-  handlepage2ResultD(event) {
-    this.setState({ page2ResultD: event.target.value });
   }
   handlebackgroundUrl(event) {
     this.setState({ backgroundUrl: event.target.value });
@@ -59,7 +53,6 @@ class Page2Results extends Component {
       page2ResultA: event.target.value,
       page2ResultB: event.target.value,
       page2ResultC: event.target.value,
-      page2ResultD: event.target.value,
       backgroundUrl: event.target.value
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
@@ -67,11 +60,10 @@ class Page2Results extends Component {
 
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
-        page2ResultA: event.target.value,
-        page2ResultB: event.target.value,
-        page2ResultC: event.target.value,
-        page2ResultD: event.target.value,
-        backgroundUrl: event.target.value
+        page2ResultA: this.state.page2ResultA,
+        page2ResultB: this.state.page2ResultB,
+        page2ResultC: this.state.page2ResultC,
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -83,7 +75,6 @@ class Page2Results extends Component {
       page2ResultA: '',
       page2ResultB: '',
       page2ResultC: '',
-      page2ResultD: '',
       backgroundUrl: ''
     });
   };
@@ -130,16 +121,6 @@ class Page2Results extends Component {
                   type="textarea"
                   value={this.state.page2ResultC}
                   placeholder="Page 2 Result C:"
-                />
-              </li>
-              <li className="">
-                <input
-                  className="inputForm"
-                  name="page2ResultD"
-                  onChange={this.handlepage2ResultD}
-                  type="textarea"
-                  value={this.state.page2ResultD}
-                  placeholder="Page 2 Result D:"
                 />
               </li>
               <li className="">

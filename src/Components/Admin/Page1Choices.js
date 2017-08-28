@@ -10,7 +10,7 @@ class Page1Choices extends Component {
     this.handlepage1ChoiceA = this.handlepage1ChoiceA.bind(this);
     this.handlepage1ChoiceB = this.handlepage1ChoiceB.bind(this);
     this.handlepage1ChoiceC = this.handlepage1ChoiceC.bind(this);
-    this.handlepage1ChoiceD = this.handlepage1ChoiceD.bind(this);
+    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -23,7 +23,7 @@ class Page1Choices extends Component {
       page1ChoiceA: '',
       page1ChoiceB: '',
       page1ChoiceC: '',
-      page1ChoiceD: ''
+      backgroundUrl: ''
     };
   }
 
@@ -36,8 +36,8 @@ class Page1Choices extends Component {
   handlepage1ChoiceC(event) {
     this.setState({ page1ChoiceC: event.target.value });
   }
-  handlepage1ChoiceD(event) {
-    this.setState({ page1ChoiceD: event.target.value });
+  handlebackgroundUrl(event) {
+    this.setState({ backgroundUrl: event.target.value });
   }
 
 
@@ -53,7 +53,7 @@ class Page1Choices extends Component {
       page1ChoiceA: event.target.value,
       page1ChoiceB: event.target.value,
       page1ChoiceC: event.target.value,
-      page1ChoiceD: event.target.value
+      backgroundUrl: event.target.value
     });
 
     axios
@@ -61,7 +61,7 @@ class Page1Choices extends Component {
         page1ChoiceA: this.state.page1ChoiceA,
         page1ChoiceB: this.state.page1ChoiceB,
         page1ChoiceC: this.state.page1ChoiceC,
-        page1ChoiceD: this.state.page1ChoiceD
+        backgroundUrl: this.state.backgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -73,7 +73,7 @@ class Page1Choices extends Component {
       page1ChoiceA: '',
       page1ChoiceB: '',
       page1ChoiceC: '',
-      page1ChoiceD: ''
+      backgroundUrl: ''
     });
   };
 
@@ -124,11 +124,11 @@ class Page1Choices extends Component {
               <li className="">
                 <input
                   className="inputForm"
-                  name="page1ChoiceD"
-                  onChange={this.handlepage1ChoiceD}
+                  name="backgroundUrl"
+                  onChange={this.handlebackgroundUrl}
                   type="textarea"
-                  value={this.state.page1ChoiceD}
-                  placeholder="Choice D:"
+                  value={this.state.backgroundUrl}
+                  placeholder="Background Image URL:"
                 />
               </li>
               <li className="">
