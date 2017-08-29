@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../../styles/signup.css';
 class Teacher extends Component {
   constructor(props) {
     super(props);
@@ -12,8 +12,8 @@ class Teacher extends Component {
 
   render() {
     return (
-      <div className= "healthContainer">
-        Teacher signup form
+      <div className= "healthContainer2">
+        <h6>New Teachers (required)</h6>
         <form className="teacherSignup" action="index.html" method="post">
 
           <label htmlFor="teacherUserid">Username</label>
@@ -31,6 +31,11 @@ class Teacher extends Component {
           <select id="availableSchools">
             <option value="">-- choose a school --</option>
           </select>
+
+          <button className="loginButton" type="submit" onClick={this.doUserValidation}>
+            Submit<i aria-hidden="true" />
+          </button>
+
         </form>
       </div>
     )

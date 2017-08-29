@@ -1,0 +1,51 @@
+
+
+.HPbodyWrapper {
+  background: -webkit-linear-gradient(-45deg, #a9e4f7 0%,#0189b2 100%);
+  min-height: 100vh;
+  min-width: 95vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.HPheader {
+  background: -webkit-linear-gradient(-45deg, #a9e4f7 0%,#0189b2 100%);
+  width: 100%;
+}
+
+.HPbody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.HPlogin {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: baseline;
+  padding-top: 60px;
+}
+
+.login {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.signup {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  border-left-style: dashed;
+  border-left-width: 2px;
+  border-left-color: black;
+  padding-left: 50px;
+}
