@@ -80,8 +80,9 @@ class Page1Choices extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="bodyWrapper">
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
+      <img src={"draynorilogo.png"} />
         <form className="">
           <h1 className="">
             Page 1 Choices
@@ -131,9 +132,9 @@ class Page1Choices extends Component {
                   placeholder="Background Image URL:"
                 />
               </li>
-              <li className="">
+              <li className="submitBtn">
                 <button
-                  className=""
+                  className="submitBtn"
                   type="submit"
                   onClick={this.addToStory}
                 >

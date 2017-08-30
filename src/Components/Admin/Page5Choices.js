@@ -89,7 +89,7 @@ class Page5Choices extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="bodyWrapper">
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
         <form className="">
           <h1 className="">
@@ -142,7 +142,7 @@ class Page5Choices extends Component {
               </li>
             <li className="">
                 <button
-                  className=""
+                  className="submitBtn"
                   type="submit"
                   onClick={this.addToStory}
                 >
