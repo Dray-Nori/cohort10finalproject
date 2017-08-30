@@ -80,6 +80,8 @@ flex-flow: row nowrap;
 }
 
 .dropdown .link {
+  position: relative;
+  margin-right: 2px;
   border-right-color: #0189b2;
   display: flex;
   align-items: center;
