@@ -1,0 +1,9 @@
+.SLIbodyWrapper {
+  background: -webkit-linear-gradient(-45deg, #a9e4f7 0%,#0189b2 100%);
+  min-height: 100vh;
+  min-width: 95vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+}

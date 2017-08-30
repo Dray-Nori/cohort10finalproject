@@ -7,7 +7,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Homepage from './Components/HomePage/HomePage';
 import Admin from './Components/Admin/Admin';
 import Signup from './Components/Signup/Signup';
-import Page from './Components/Pages/Page'
+import Page from './Components/Pages/Page';
+import studentLogin from './Components/StudentLogin/studentLogin';
 import StoryPicker from './Components/Pages/StoryPicker'
 import CreateStory from './Components/Admin/CreateStory'
 import Page1Choices from './Components/Admin/Page1Choices'
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route path="/admin/page4choices" component={Page4Choices} />
         <Route path="/admin/page5results" component={Page5Results} />
         <Route path="/admin/page5choices" component={Page5Choices} />
+        <Route path="/StudentLogin/studentLogin" component={studentLogin} />
         <Route path="/admin/ending" component={Ending} />
         <Route path="/stories" component={StoryPicker} />
         <Route path="/login" component={Signup} />

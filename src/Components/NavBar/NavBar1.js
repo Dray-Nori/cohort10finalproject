@@ -29,7 +29,7 @@ class NavBar1 extends Component {
             <Link className="link" to="/">Sign Up a New Student</Link>
             <Link className="link" to="/">Show Available Games</Link>
             <Link className="link" to="/admin/createstory">Create a New Story</Link>
-            <Link className="link" to="/">Go to Student Login</Link>
+            <Link className="link" to="/StudentLogin/studentLogin">Go to Student Login</Link>
             </div>
           </div>
             <div className="dropdownBtn">
