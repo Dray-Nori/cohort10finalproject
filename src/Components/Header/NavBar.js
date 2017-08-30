@@ -33,9 +33,9 @@ class NavBar extends Component {
             {this.state.navigation.slice(0,this.state.rowsToDisplay).map((navigation, i) => <li key={i}>
             <a className="navigationListItem" href={navigation.link}>{navigation.name}</a></li>)}
           </ul>
-          <a onClick={this.showMore}>
+          <a onMouseOver={this.showMore}>
               {this.state.expanded ?
-                (<span className="navigationShowMore">- Hide -(Click Me)</span>) : (<span className="navigationShowMore">Site Navigation+(Click Me)</span>)}
+                (<span className="navigationShowMore">- Hide </span>) : (<span className="navigationShowMore">Site Navigation+(Click Me)</span>)}
           </a>
         </div>
     </div>

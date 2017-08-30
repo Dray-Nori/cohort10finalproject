@@ -1,4 +1,4 @@
-* {
+/** {
   font-family: 'Share Tech', sans-serif;
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
@@ -13,8 +13,8 @@
   align-items: center;
 }
 
-img {
-  width: 300px;
+.headerLogo {
+  width: 100px;
 }
 
 form {
@@ -151,4 +151,29 @@ li a:hover{
 .ident {
   margin-left: 10px;
   margin-right: 10px;
+}*/
+
+/*So here's the actual css*/
+
+* {
+  font-family: 'Share Tech', sans-serif;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: -webkit-linear-gradient(top, #afbfbd 0%,#555b58 44%,#0a0e0a 51%,#0a0809 100%);
+}
+
+.headerLogo {
+  width: 100px;
+  margin-right: 25px;
+  padding-left: 25px;
 }

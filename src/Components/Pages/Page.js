@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import StoryHeader from '../Header/StoryHeader'
+import StoryHeader from '../StudentHeader/StoryHeader'
 
 // import children
 // import "./Page.css";

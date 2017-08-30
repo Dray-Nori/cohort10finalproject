@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/header.css';
-import Contributors from './Contributors.js';
-import NavBar from './NavBar.js';
-import Login from './Login.js';
-import Identification from './Identification.js';
+import NavBar1 from '../NavBar/NavBar1.js';
 
 class Header extends Component {
   constructor(props) {
@@ -15,13 +12,9 @@ class Header extends Component {
   render() {
     return (
       <div className="headerContainer">
-        <img src={"draynorilogo.png"} />
-        <div className="navcontCombined">
-        <Contributors />
-        <NavBar />
-        </div>
-        <Identification />
-        <Login />
+          <img className="headerLogo" src={"draynorilogo.png"} />
+          <NavBar1 />
+
       </div>
     );
   }

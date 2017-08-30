@@ -4,7 +4,6 @@ import '../../styles/signup.css';
 
 import School from './School';
 import Teacher from './Teacher';
-import Login from '../Header/Login';
 
 class Signup extends Component {
   constructor(props) {
@@ -25,11 +24,9 @@ class Signup extends Component {
     return (
         <div className="signupPage">
           <div className="signupForms">
-            <School />
-            <Teacher />
-          </div>
-          <div className="loginForm">
-            <Login />
+            <School className="school" />
+            <Teacher className="teacher" />
+
           </div>
         </div>
 

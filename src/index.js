@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Homepage from './Components/HomePage/HomePage';
 import Admin from './Components/Admin/Admin';
-import Signup from './Components/Login/Signup';
+import Signup from './Components/Signup/Signup';
 import Page from './Components/Pages/Page'
 import StoryPicker from './Components/Pages/StoryPicker'
 import CreateStory from './Components/Admin/CreateStory'

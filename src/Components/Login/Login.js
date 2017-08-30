@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/header.css';
+import '../../styles/login.css';
 
 class Login extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ class Login extends Component {
               />
               <br />
               <button className="loginButton" type="submit" onClick={this.doUserValidation}>
-                Login<i aria-hidden="true" />
+                Submit<i aria-hidden="true" />
               </button>
           </form>
         </div>
