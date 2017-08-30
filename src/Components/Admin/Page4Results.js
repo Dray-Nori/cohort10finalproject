@@ -8,9 +8,11 @@ class Page4Results extends Component {
 
     this.showMore = this.showMore.bind(this, true);
     this.handlepage4ResultA = this.handlepage4ResultA.bind(this);
+    this.handlepage4ResultABackgroundUrl = this.handlepage4ResultABackgroundUrl.bind(this);
     this.handlepage4ResultB = this.handlepage4ResultB.bind(this);
+    this.handlepage4ResultBBackgroundUrl = this.handlepage4ResultBBackgroundUrl.bind(this);
     this.handlepage4ResultC = this.handlepage4ResultC.bind(this);
-    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
+    this.handlepage4ResultCBackgroundUrl = this.handlepage4ResultCBackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -25,23 +27,31 @@ class Page4Results extends Component {
       rowsToDisplay : 0,
       expanded: false,
       page4ResultA: '',
+      page4ResultABackgroundUrl: '',
       page4ResultB: '',
+      page4ResultBBackgroundUrl: '',
       page4ResultC: '',
-      backgroundUrl: ''
+      page4ResultCBackgroundUrl: ''
     };
   }
 
   handlepage4ResultA(event) {
     this.setState({ page4ResultA: event.target.value });
   }
+  handlepage4ResultABackgroundUrl(event) {
+    this.setState({ page4ResultABackgroundUrl: event.target.value });
+  }
   handlepage4ResultB(event) {
     this.setState({ page4ResultB: event.target.value });
+  }
+  handlepage4ResultBBackgroundUrl(event) {
+    this.setState({ page4ResultBBackgroundUrl: event.target.value });
   }
   handlepage4ResultC(event) {
     this.setState({ page4ResultC: event.target.value });
   }
-  handlebackgroundUrl(event) {
-    this.setState({ backgroundUrl: event.target.value });
+  handlepage4ResultCBackgroundUrl(event) {
+    this.setState({ page4ResultCBackgroundUrl: event.target.value });
   }
 
   showMore() {
@@ -54,9 +64,11 @@ class Page4Results extends Component {
     event.preventDefault();
     this.setState({
       page4ResultA: event.target.value,
+      page4ResultABackgroundUrl: event.target.value,
       page4ResultB: event.target.value,
+      page4ResultBBackgroundUrl: event.target.value,
       page4ResultC: event.target.value,
-      backgroundUrl: event.target.value
+      page4ResultCBackgroundUrl: event.target.value
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
     console.log('Summary of the story is:     ' + this.state.storySummary);
@@ -64,9 +76,11 @@ class Page4Results extends Component {
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
         page4ResultA: this.state.page4ResultA,
+        page4ResultABackgroundUrl: this.state.page4ResultABackgroundUrl,
         page4ResultB: this.state.page4ResultB,
+        page4ResultBBackgroundUrl: this.state.page4ResultBBackgroundUrl,
         page4ResultC: this.state.page4ResultC,
-        backgroundUrl: this.state.backgroundUrl
+        page4ResultCBackgroundUrl: this.state.page4ResultCBackgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -76,9 +90,11 @@ class Page4Results extends Component {
       });
     this.setState({
       page4ResultA: '',
+      page4ResultABackgroundUrl: '',
       page4ResultB: '',
+      page4ResultBBackgroundUrl: '',
       page4ResultC: '',
-      backgroundUrl: ''
+      page4ResultCBackgroundUrl: ''
     });
   };
 
@@ -92,7 +108,7 @@ class Page4Results extends Component {
             Page 4 Results
           </h1>
           <h2 className="">
-            Enter a result for Page 2 Choices:
+            Enter a result for Page 3 Choices:
           </h2>
           <ul>
             <div className="">
@@ -109,11 +125,31 @@ class Page4Results extends Component {
               <li className="">
                 <input
                   className="inputForm"
+                  name="page4ResultABackgroundUrl"
+                  onChange={this.handlepage4ResultABackgroundUrl}
+                  type="textarea"
+                  value={this.state.page4ResultABackgroundUrl}
+                  placeholder="Page 4 Result A Background URL:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
                   name="page4ResultB"
                   onChange={this.handlepage4ResultB}
                   type="textarea"
                   value={this.state.page4ResultB}
                   placeholder="Page 4 Result B:"
+                />
+              </li>
+              <li className="">
+                <input
+                  className="inputForm"
+                  name="page4ResultBBackgroundUrl"
+                  onChange={this.handlepage4ResultBBackgroundUrl}
+                  type="textarea"
+                  value={this.state.page4ResultBBackgroundUrl}
+                  placeholder="Page 4 Result B Background URL:"
                 />
               </li>
               <li className="">
@@ -129,11 +165,11 @@ class Page4Results extends Component {
               <li className="">
                 <input
                   className="inputForm"
-                  name="backgroundUrl"
-                  onChange={this.handlebackgroundUrl}
+                  name="page4ResultCBackgroundUrl"
+                  onChange={this.handlepage4ResultCBackgroundUrl}
                   type="textarea"
-                  value={this.state.backgroundUrl}
-                  placeholder="Background URL:"
+                  value={this.state.page4ResultCBackgroundUrl}
+                  placeholder="Page 4 Result C Background URL:"
                 />
               </li>
               <li className="">

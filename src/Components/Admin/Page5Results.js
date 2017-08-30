@@ -8,7 +8,7 @@ class Page5Results extends Component {
 
     this.showMore = this.showMore.bind(this, true);
     this.handlepage5ResultA = this.handlepage5ResultA.bind(this);
-    this.handlebackgroundUrl = this.handlebackgroundUrl.bind(this);
+    this.handlepage5ResultABackgroundUrl = this.handlepage5ResultABackgroundUrl.bind(this);
 
     this.state = {
       navigation: [
@@ -25,16 +25,16 @@ class Page5Results extends Component {
         ],
       rowsToDisplay : 0,
       expanded: false,
-      page4ResultA: '',
-      backgroundUrl: ''
+      page5ResultA: '',
+      page5ResultABackgroundUrl: ''
     };
   }
 
   handlepage5ResultA(event) {
     this.setState({ page5ResultA: event.target.value });
   }
-  handlebackgroundUrl(event) {
-    this.setState({ backgroundUrl: event.target.value });
+  handlepage5ResultABackgroundUrl(event) {
+    this.setState({ page5ResultABackgroundUrl: event.target.value });
   }
 
   showMore() {
@@ -47,7 +47,7 @@ class Page5Results extends Component {
     event.preventDefault();
     this.setState({
       page5ResultA: event.target.value,
-      backgroundUrl: event.target.value
+      page5ResultABackgroundUrl: event.target.value
     });
     console.log('Title of the story is:     ' + this.state.storyTitle);
     console.log('Summary of the story is:     ' + this.state.storySummary);
@@ -55,7 +55,7 @@ class Page5Results extends Component {
     axios
       .post('https://limitless-peak-19224.herokuapp.com/newproduct', {
         page5ResultA: this.state.page5ResultA,
-        backgroundUrl: this.state.backgroundUrl
+        page5ResultABackgroundUrl: this.state.page5ResultABackgroundUrl
       })
       .then(response => {
         console.log(response, 'Story added!');
@@ -65,7 +65,7 @@ class Page5Results extends Component {
       });
     this.setState({
       page5ResultA: '',
-      backgroundUrl: ''
+      page5ResultABackgroundUrl: ''
     });
   };
 
@@ -96,11 +96,11 @@ class Page5Results extends Component {
               <li className="">
                 <input
                   className="inputForm"
-                  name="backgroundUrl"
-                  onChange={this.handlebackgroundUrl}
+                  name="page5ResultABackgroundUrl"
+                  onChange={this.handlepage5ResultABackgroundUrl}
                   type="textarea"
-                  value={this.state.backgroundUrl}
-                  placeholder="Background URL:"
+                  value={this.state.page5ResultABackgroundUrl}
+                  placeholder="Page 5 Result A Background URL:"
                 />
               </li>
               <li className="">
