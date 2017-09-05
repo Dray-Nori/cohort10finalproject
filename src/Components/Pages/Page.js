@@ -14,6 +14,9 @@ class Page extends Component {
     this.onButtonPress = this.onButtonPress.bind(this);
 
     this.state = {
+      allPages: [],
+      allOptions: [],
+      currentPage: "1",
       stats: [],
       text: [],
       art: "",
@@ -22,13 +25,40 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    let json = require(`/${this.props.match.params.name}/index.json`);
-    let img = require(`/${this.props.match.params.name}/${json.art}`);
-    this.setState({
-      stats: json.stats,
-      text: json.text,
-      art: img,
-      options: json.options
+
+    fetch('https://damp-reef-35552.herokuapp.com/api/v1/stories')
+    .then(res => res.json())
+    .then(storyList => {
+      let ourStory = storyList.find(story => {
+        return (story.name === this.props.match.params.name)
+      })
+      console.log('ourStory', ourStory, ourStory.id);
+      fetch('https://damp-reef-35552.herokuapp.com/api/v1/pages')
+      .then(res => res.json())
+      .then(results => {
+        let storyPages = results.filter(page => {
+          return (page.story_id === ourStory.id)
+        })
+        fetch('https://damp-reef-35552.herokuapp.com/api/v1/options')
+        .then(res => res.json())
+        .then(options => {
+          let currentPage = storyPages.find(cur => {
+            return (cur.name === "1")
+          })
+          let currentOptions = options.filter(opt => {
+            return (opt.page_id === currentPage.id)
+          })
+          console.log('currentPage', currentPage);
+          console.log('currentOptions', currentOptions);
+          this.setState({
+            allPages: storyPages,
+            allOptions: options,
+            text: currentPage.text,
+            art: currentPage.img,
+            options: currentOptions
+          })
+        })
+      })
     })
   };
 
@@ -66,7 +96,7 @@ class Page extends Component {
     console.log('state', this.state);
     let options = this.state.options.map((opt) => {
       return (
-        <button key={opt.next} value={opt.next} onClick={this.onButtonPress}>{opt.text}</button>
+        <button key={opt.next_page_id} value={opt.next} onClick={this.onButtonPress}>{opt.text}</button>
       )
     })
     return (
