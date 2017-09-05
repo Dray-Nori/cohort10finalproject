@@ -48,8 +48,8 @@ class Page extends Component {
           let currentOptions = options.filter(opt => {
             return (opt.page_id === currentPage.id)
           })
-          console.log('currentPage', currentPage);
-          console.log('currentOptions', currentOptions);
+          // console.log('currentPage', currentPage);
+          // console.log('currentOptions', currentOptions);
           this.setState({
             allPages: storyPages,
             allOptions: options,
@@ -65,30 +65,36 @@ class Page extends Component {
 
   onButtonPress = (e) => {
     e.preventDefault()
+    // effect determines which button was pressed.;
+    console.log('event', e.target.value);
     let effect = this.state.options.find((opt) => {
-      if (opt.next === e.target.value) {
-        return true
-      }
-      return false
+      console.log('opt', opt.next_page_id);
+      return (parseInt(opt.next_page_id) === parseInt(e.target.value))
     })
-    let newStatBlock = this.state.stats;
-    let newStat = newStatBlock.find((opt) => {
-      if (opt.name === effect.effect.target) {
-        return true
-      }
-      return false
-    });
-    let index = newStatBlock.indexOf(newStat);
-    newStatBlock[index].value += effect.effect.value;
+    console.log('effect', effect);
+    // figure out what stat was effected and how it should change
+    // since the stats/effects are not in API yet, commenting out the code.
 
-    let nextPage = require(`/${this.props.match.params.name}/${e.target.value}`);
-    let nextImg = require(`/${this.props.match.params.name}/${nextPage.art}`)
+    // let newStatBlock = this.state.stats;
+    // let newStat = newStatBlock.find((opt) => {
+    //   return (opt.name === effect.effect.target)
+    // });
+    // let index = newStatBlock.indexOf(newStat);
+    // newStatBlock[index].value += effect.effect.value;
+
+    let nextPage = this.state.allPages.find(page => {
+      return (effect.next_page_id === page.id);
+    })
+    let nextOptions = this.state.allOptions.filter(opt => {
+      return (opt.page_id === nextPage.id);
+    });
 
     this.setState({
-      stats: newStatBlock,
+      // stats: newStatBlock,
       text: nextPage.text,
-      art: nextImg,
-      options: nextPage.options
+      art: nextPage.img,
+      currentPage: nextPage.name,
+      options: nextOptions,
     })
   };
 
@@ -96,7 +102,7 @@ class Page extends Component {
     console.log('state', this.state);
     let options = this.state.options.map((opt) => {
       return (
-        <button key={opt.next_page_id} value={opt.next} onClick={this.onButtonPress}>{opt.text}</button>
+        <button key={opt.id} value={opt.next_page_id} onClick={this.onButtonPress}>{opt.text}</button>
       )
     })
     return (
