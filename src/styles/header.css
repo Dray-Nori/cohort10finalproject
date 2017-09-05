@@ -169,11 +169,11 @@ li a:hover{
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background: -webkit-linear-gradient(top, #afbfbd 0%,#555b58 44%,#0a0e0a 51%,#0a0809 100%);
+  background-color: #1a1a1a;
+background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
 }
 
 .headerLogo {
-  width: 100px;
   margin-right: 25px;
   padding-left: 25px;
 }

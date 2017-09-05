@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../../styles/header.css';
-import statusBar from '../StatusBar/statusBar.js';
+import '../../styles/StudentLogin.css';
+import Identification from './Identification.js';
 
-class studentHeader extends Component {
+class StudentHeader extends Component {
   constructor(props) {
     super(props);
 
@@ -13,11 +13,11 @@ class studentHeader extends Component {
     return (
       <div className="headerContainer">
           <img className="headerLogo" src={"draynorilogo.png"} />
-          <statusBar />
-          
+          <Identification className="identificationbox" />
+
       </div>
     );
   }
 }
 
-export default studentHeader;
+export default StudentHeader;

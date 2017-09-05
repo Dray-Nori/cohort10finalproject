@@ -12,7 +12,7 @@ class Header extends Component {
   render() {
     return (
       <div className="headerContainer">
-          <img className="headerLogo" src={"draynorilogo.png"} />
+          <img className="headerLogo" src={"logodraynori.png"} />
           <NavBar1 />
 
       </div>

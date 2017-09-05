@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/login.css';
+import '../../styles/StudentLogin.css';
 
 class studentLoginForm extends Component {
   constructor(props) {
@@ -11,8 +11,7 @@ class studentLoginForm extends Component {
 
     this.state = {
       username: '',
-      password: '',
-      str: '',
+      password: ''
     };
   }
 
@@ -21,10 +20,6 @@ class studentLoginForm extends Component {
   }
   handlePassword(event) {
     this.setState({ password: event.target.value });
-  }
-
-  handleStringChange(event) {
-    this.setState({ str: event.target.value });
   }
 
   doUserValidation = e => {
@@ -42,8 +37,9 @@ class studentLoginForm extends Component {
   render() {
     return (
         <div className="userLoginContainer">
+          <h1>TEST</h1>
           <form>
-              <input autocomplete="off"
+              <input
                 className="userLoginForm"
                 name="username"
                 onChange={this.handleUserName}
@@ -52,7 +48,7 @@ class studentLoginForm extends Component {
                 placeholder="Username:"
               />
               <br />
-              <input autocomplete="off"
+              <input
                 className="userLoginForm"
                 name="password"
                 onChange={this.handlePassword}
@@ -66,7 +62,6 @@ class studentLoginForm extends Component {
               </button>
           </form>
         </div>
-
     );
   }
 }
