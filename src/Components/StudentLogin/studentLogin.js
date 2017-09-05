@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import studentLoginForm from './studentLoginForm.js';
-import studentHeader from '../Header/studentHeader.js';
+import studentLoginForm from './studentLoginForm';
 import '../../styles/StudentLogin.css';
-
+import StudentHeader from '../StudentHeader/StudentHeader.js';
 
 class studentLogin extends Component {
   constructor(props) {
@@ -19,8 +18,8 @@ class studentLogin extends Component {
     return (
       <div className="App">
         <div className="SLIbodyWrapper">
-          <studentHeader />
-          <h4>To Play a New Game</h4>
+          <StudentHeader />
+          <h4>Hey Kid, To Play a New Game</h4>
           <h4>Enter Your Username and Password</h4>
           <studentLoginForm />
         </div>

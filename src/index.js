@@ -25,6 +25,7 @@ import Ending from './Components/Admin/Ending'
 ReactDOM.render(
   <BrowserRouter>
       <Switch>
+        <Route path="/StudentLogin/studentLogin" component={studentLogin} />
         <Route path="/story/:name" component={Page} />
         <Route path="/admin/createstory" component={CreateStory} />
         <Route path="/admin/page1choices" component={Page1Choices} />
@@ -36,7 +37,6 @@ ReactDOM.render(
         <Route path="/admin/page4choices" component={Page4Choices} />
         <Route path="/admin/page5results" component={Page5Results} />
         <Route path="/admin/page5choices" component={Page5Choices} />
-        <Route path="/StudentLogin/studentLogin" component={studentLogin} />
         <Route path="/admin/ending" component={Ending} />
         <Route path="/stories" component={StoryPicker} />
         <Route path="/login" component={Signup} />

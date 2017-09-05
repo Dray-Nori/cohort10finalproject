@@ -1,7 +1,8 @@
 
 
 .HPbodyWrapper {
-  background: -webkit-linear-gradient(-45deg, #a9e4f7 0%,#0189b2 100%);
+  background-color: #88b1de;
+background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
   min-height: 100vh;
   min-width: 95vw;
   display: flex;
@@ -11,7 +12,8 @@
 }
 
 .HPheader {
-  background: -webkit-linear-gradient(-45deg, #a9e4f7 0%,#0189b2 100%);
+  background-color: #1a1a1a;
+background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
   width: 100%;
 }
 

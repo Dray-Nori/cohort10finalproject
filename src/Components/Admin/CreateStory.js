@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header.js';
 import '../../styles/admin.css';
 const axios = require('axios');
+
 
 class CreateStory extends Component {
   constructor(props) {
@@ -73,6 +75,7 @@ class CreateStory extends Component {
   render() {
     return (
       <div className="bodyWrapper">
+        <Header />
 
       <style>@import url('https://fonts.googleapis.com/css?family=Sanchez');</style>
       <img src={"draynorilogo.png"} />

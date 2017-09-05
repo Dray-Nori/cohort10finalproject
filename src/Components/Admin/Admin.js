@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles/admin.css';
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header.js';
 
 class Admin extends Component {
   constructor(props) {
